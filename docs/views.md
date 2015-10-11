@@ -6,21 +6,27 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Homepage FoodTruckIndex/ FoodTruckItem /Carosel 
+![homepage]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## AllFoodTruck FoodTruckIndex/ FoodTruckItem
+![indexpage]
 
-## NoteBookForm
-![notebook-form]
+## FoodTruckForm
+![food-truck-form]
 
-## Component Heirarchy
-![component-heirarchy]
+## FoodTruck
+![food-truck]
+
+## ProfileForm FoodTruckIndex/FoodTruck Item (Bonus DonationIndex/Donation Index)
+![profile-form]
+
+## Site Map
+![site-map]
 
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[homepage]: ./wireframes/root_notes.png
+[food-truck-form]: ./wireframes/root_notebooks.png
+[profile-form]: ./wireframes/notebook_form.png
 [component-heirarchy]: ./wireframes/component_heirarchy.png

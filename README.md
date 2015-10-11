@@ -1,4 +1,4 @@
-# FresherNote
+# Food Truck Starter
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
@@ -6,19 +6,17 @@
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+Food Truck Starter is a web application inspired by KickStarter for food truck enthusiasts. It is built using Ruby on Rails and React.js and allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags and search notes by tag
-- [ ] Search through notes for blocks of text
-- [ ] Apply complex styling to notes while editing
-- [ ] Set reminders on notes
+- [ ] CRUD for food trucks
+- [ ] Filter for food trucks
+- [ ] Edit and delete food trucks
+- [ ] Add pledges
+- [ ] Edit account
 
 ## Design Docs
 * [View Wireframes][view]
@@ -29,67 +27,46 @@ and React.js. FresherNote allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Note Model and JSON API (1.5 days)
+### Phase 1: User Authentication, Food Truck Model and JSON API (1.5 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for Notes.
+I will implement user signup and authentication with BCrypt and generate basic landing page for signing up and logging in. The root URL will be setup along with JSON API for food trucks.
 
 [Details][phase-one]
 
 ### Phase 2: Flux Architecture and Note CRUD (2.5 days)
 
-Phase 2 is focused on setting up Flux, the React Router, and the React view
-structure for the main application. After the basic Flux architecture has been
-set up, a Note store will be implemented and a set of actions corresponding to
-the needed CRUD functionality created. Once this is done, I will create React
-views for the Notes `Index`, `IndexItem` and `Form`. At the end of Phase 2,
-Notes can be created, read, edited and destroyed in the browser. Notes should
-save to the database when the form loses focus or is left idle after editing.
-Lastly, while constructing the views I will start using basic bootstrap for
-styling.
+I will set up Flux with components and router, which will be used for each of the food trucks to link to their individual pages. Next comes the food truck store and the actions needed to fulfill the CRUD functionalities. I will focus on reading first, then creating, and updating and deleting. I will use some bootstrap for styling.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks and Tags (2 days)
+### Phase 3: Categories and Food Trucks (2 days)
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook, which has
-its own `Index` view. Create JSON API for Notebooks. Notes can also now be
-tagged with multiple tags. Users can bring up notes in a separate `SearchIndex`
-view by searching for their tags. Once the tag search is implemented, I will
-extend this to a fuzzy search through every Note's content.
+Here, I will focus on categorizing food trucks (tagging) so that they can be filtered through to the main page.
 
 [Details][phase-three]
 
-### Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Incorporate Pledges (1 day)
 
-Using quill.js, allow for complex styling of notes. 
+Pledges sync up with the amount raised and give the user more selection on suggest amounts to donate.
 
 [Details][phase-four]
 
-### Phase 5: Reminders and Garbage Collection (1 day)
+### Phase 5: Edit Profile (1 day)
 
-Phase 5 introduces two new features. First, users can set reminders on notes
-which will at the time they are set for prompt the user to review and edit the
-given note. In addition, I will implement a feature that asks users to review
-notes once they reach a certain age and ask whether they should be kept,
-archived, or deleted.
+Users will be able to edit their profile details and upload new pictures and descriptions if necessary.
 
 [Details][phase-five]
 
 ### Phase 6: Styling Cleanup and Seeding (1 day)
 
-Bootstrap will have been used to keep things organized up until now, but in
-Phase 6 I will add styling flourishes and make modals out of some elements (like
-the NotebookForm).
+I will use bootstrap and some jqeury to add styling and the carosel view on the homepage.
 
-### Bonus Features (TBD)
-- [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Changelogs for Notes
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Multiple sessions
+Bonus:
+- [ ] View your donations
+- [ ] View other users' profiles
+- [ ] Tag users on food trucks
+- [ ] Comment on food trucks
+- [ ] Search bar for food trucks
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
