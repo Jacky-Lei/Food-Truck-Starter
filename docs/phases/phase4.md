@@ -1,7 +1,8 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+### Phase 4: Incorporate Pledges (1.5 days)
 
 ## Rails
 ### Models
+
 
 ### Controllers
 
@@ -9,10 +10,17 @@
 
 ## Flux
 ### Views (React Components)
+* Perks
 
 ### Stores
+* Perks
 
 ### Actions
+* ApiActions.receiveAllPerks
+* ApiActions.receiveSinglePerks
+
+
+### ApiUtil
+* ApiUtil.createPerks
 
 ## Gems/Libraries
-* Quill.js

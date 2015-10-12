@@ -1,14 +1,13 @@
-# Phase 1: User Authentication, Note Model and JSON API
-
+### Phase 1: User Authentication, Food Truck Model and JSON API (1.5 days)
 ## Rails
 ### Models
 * User
-* Note
+* Food Truck
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::FoodTruckController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb

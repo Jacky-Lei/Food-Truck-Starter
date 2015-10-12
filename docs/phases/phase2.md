@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+### Phase 2: Flux Architecture and Note CRUD (2.5 days)
 
 ## Rails
 ### Models
@@ -9,24 +9,24 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* FoodTruckIndex
+  - FoodTruckIndexItem
+* FoodTruckForm
 
 ### Stores
-* Note
+* FoodTruck
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveAllFoodTrucks
+* ApiActions.receiveSingleFoodTruck
+* ApiActions.deleteFoodTruck
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllFoodTrucks
+* ApiUtil.fetchSingleFoodTruck
+* ApiUtil.createFoodTruck
+* ApiUtil.editFoodTruck
+* ApiUtil.destroyFoodTruck
 
 ## Gems/Libraries
 * Flux Dispatcher

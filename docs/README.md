@@ -1,6 +1,6 @@
 # Food Truck Starter
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku] **NB:** foodtruckstarter.herokuapp.com (placeholder, will still need to host)
 
 [heroku]: http://www.herokuapp.com
 
@@ -13,17 +13,9 @@ Food Truck Starter is a web application inspired by KickStarter for food truck e
 - [ ] Create an account
 - [ ] Log in / Log out
 - [ ] CRUD for food trucks
-- [ ] Filter for food trucks
-- [ ] Edit and delete food trucks
-- [ ] Add pledges
-- [ ] Edit account
+- [ ] Filter (categories and carousel) for food trucks for viewing
+- [ ] Make pledges to support food trucks
 
-## Design Docs
-* [View Wireframes][view]
-* [DB schema][schema]
-
-[view]: ./docs/views.md
-[schema]: ./docs/schema.md
 
 ## Implementation Timeline
 
@@ -45,23 +37,20 @@ Here, I will focus on categorizing food trucks (tagging) so that they can be fil
 
 [Details][phase-three]
 
-### Phase 4: Incorporate Pledges (1 day)
+### Phase 4: Incorporate Pledges(Perks) (1.5 days)
 
-Pledges sync up with the amount raised and give the user more selection on suggest amounts to donate.
+Pledges sync up with the amount raised and give the user more selection on suggest amounts to donate. This will be built through another component that is a subcomponent of food truck.
 
 [Details][phase-four]
 
-### Phase 5: Edit Profile (1 day)
+### Phase 5: Styling Cleanup and Seeding (1.5 days)
 
-Users will be able to edit their profile details and upload new pictures and descriptions if necessary.
+I will use bootstrap and some jqeury to add styling and the carousel view on the homepage.
 
 [Details][phase-five]
 
-### Phase 6: Styling Cleanup and Seeding (1 day)
-
-I will use bootstrap and some jqeury to add styling and the carosel view on the homepage.
-
 Bonus:
+- [ ] Edit account
 - [ ] View your donations
 - [ ] View other users' profiles
 - [ ] Tag users on food trucks

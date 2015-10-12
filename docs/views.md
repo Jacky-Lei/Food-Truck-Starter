@@ -6,27 +6,31 @@
 ## New Session
 ![new-session]
 
-## Homepage FoodTruckIndex/ FoodTruckItem /Carosel 
+## Homepage NavBar, FoodTruckCarousel/FoodTruckItem, FoodTruckIndex/FoodTruckItem
 ![homepage]
 
-## AllFoodTruck FoodTruckIndex/ FoodTruckItem
+## AllFoodTruck NavBar, FoodTruckIndex/FoodTruckItem
 ![indexpage]
 
-## FoodTruckForm
+## FoodTruckForm NavBar
 ![food-truck-form]
 
-## FoodTruck
+## FoodTruck NavBar, FoodTruckItem, Funding/FundingBar
 ![food-truck]
 
-## ProfileForm FoodTruckIndex/FoodTruck Item (Bonus DonationIndex/Donation Index)
+## ProfileForm NavBar, ProfileForm/EditForm, FoodTruckIndex/FoodTruck Item
 ![profile-form]
 
 ## Site Map
 ![site-map]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[homepage]: ./wireframes/root_notes.png
-[food-truck-form]: ./wireframes/root_notebooks.png
-[profile-form]: ./wireframes/notebook_form.png
+[user-new]: ./wireframes/new_user.png
+[session-new]: ./wireframes/new_session.png
+[homepage]: ./wireframes/homepage.png
+[food-truck-show]: ./wireframes/food_truck_show.png
+[food-truck-new]: ./wireframes/food_truck_new.png
+[food-truck-index]: ./wireframes/food_truck_index.png
+[user-show]: ./wireframes/user_show.png
+
 [component-heirarchy]: ./wireframes/component_heirarchy.png
+[site-map]: ./wireframes/site_map.png
