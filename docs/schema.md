@@ -1,6 +1,6 @@
 # Schema Information
 
-## foodtrucks
+## foodtrucks (migrated)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -10,17 +10,16 @@ author_id   | integer   | not null, foreign key (references users), indexed
 end_date    | date      | not null
 image       | string    | default: http://images.clipartpanda.com/food-delivery-truck-clipart-yTo8MzjTE.jpeg
 category_id | integer   | not null, foreign key (references categories), indexed
-funding_goal| fixnum    | not null
+funding_goal| integer    | not null
 
 ## donations
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-name            | string    | not null
-amount_pledged  | integer   | not null
-foodtruck_id    | integer   | not null, indexed, unique
-backer_id       | integer   | not null, indexed, unique
-perk_id         | integer   | unique
+amount          | integer   | not null
+foodtruck_id    | integer   | not null, foreign key (references foodtruck), indexed
+backer_id       | integer   | not null, foreign key (references backer), indexed
+perk_id         | integer   |
 
 
 ## perks
@@ -29,12 +28,12 @@ column name     | data type | details
 id              | integer   | not null, primary key
 name            | string    | not null
 description     | text      | not null
-amount_pledged  | integer   | not null
-foodtruck_id    | integer   | not null, indexed, unique
+amount          | integer   | not null
+foodtruck_id    | integer   | not null, not null, foreign key (references foodtruck), indexed
 
 foodtruck id just for when perk is created, otherwise it's brought through the donation
 
-## users
+## users (migrated)
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
