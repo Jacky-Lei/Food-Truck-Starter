@@ -7,13 +7,15 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
+* Api::UserController (create, destroy, index, show, update)
 * Api::FoodTruckController (create, destroy, index, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+
+* JBuilder Views - user profiles
+
 
 ## Flux
 ### Views (React Components)

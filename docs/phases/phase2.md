@@ -6,6 +6,9 @@
 ### Controllers
 
 ### Views
+* JBuilder Views - food trucks
+* JBuilder Views - categories
+
 
 ## Flux
 ### Views (React Components)
