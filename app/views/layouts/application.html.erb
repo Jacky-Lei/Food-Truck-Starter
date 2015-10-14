@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>FoodTruckStarter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <script>
+    window.CURRENT_USER_ID = <%= current_user ? current_user.id : "null" %>;
+  </script>
 </head>
 <body>
+
+  <div id="navbar">navbar here</div>
 
 <% if current_user %>
 <%= current_user.username %>

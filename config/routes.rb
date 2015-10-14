@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :users
   resources :foodtrucks
 
+  namespace :api, defaults: {format: :json} do
+    resources :users, only: [:show]
+    resources :foodtrucks, only: [:create, :index, :show]
+  end
 end

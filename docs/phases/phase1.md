@@ -7,8 +7,8 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::UserController (create, destroy, index, show, update)
-* Api::FoodTruckController (create, destroy, index, show, update)
+* Api::UserController (show)
+* Api::FoodTruckController (create, index, show)
 
 ### Views
 * users/new.html.erb
