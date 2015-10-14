@@ -11,16 +11,18 @@
 </head>
 <body>
 
-  <div id="navbar">navbar here</div>
 
-<% if current_user %>
+
+  <!-- <div id="navbar">navbar here</div> -->
+
+<!-- <% if current_user %>
 <%= current_user.username %>
 <%= button_to("Sign Out", session_url, method: :delete) %>
-<% end %>
+<% end %> -->
 
 <%= yield %>
 
-<%= flash[:errors] %>
+<!-- <%= flash[:errors] %> -->
 
 </body>
 </html>

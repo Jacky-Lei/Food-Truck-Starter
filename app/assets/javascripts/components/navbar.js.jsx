@@ -1,4 +1,3 @@
-
 window.Navbar = React.createClass({
   render: function (){
     if (window.CURRENT_USER_ID) {
@@ -77,9 +76,3 @@ window.Navbar = React.createClass({
 
   },
 });
-
-$(function () {
-  React.render(
-    <Navbar/>, document.getElementById("navbar")
-    );
-  })

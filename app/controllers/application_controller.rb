@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_not_logged_in
-    redirect_to posts_url if current_user
+    redirect_to root_url if current_user
   end
 
 end

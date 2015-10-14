@@ -16,4 +16,6 @@
 #
 
 class Foodtruck < ActiveRecord::Base
+  validates :title, :description, :author_id, :end_date, category_id, funding_goal, presence: true
+
 end
