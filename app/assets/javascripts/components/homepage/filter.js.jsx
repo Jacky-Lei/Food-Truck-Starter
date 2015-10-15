@@ -1,9 +1,10 @@
-window.App = React.createClass({
+window.Filter = React.createClass({
   render: function(){
     return(
     <div>
-      <Navbar/>
-      <div className="app">
+      <div className="filter">
+
+        <FoodtruckIndex/>
       </div>
 
       {this.props.children}

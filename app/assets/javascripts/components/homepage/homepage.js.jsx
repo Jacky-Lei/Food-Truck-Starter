@@ -1,9 +1,10 @@
-window.App = React.createClass({
+window.Homepage = React.createClass({
   render: function(){
     return(
     <div>
-      <Navbar/>
-      <div className="app">
+      <div className="homepage">
+      
+        <Filter/>
       </div>
 
       {this.props.children}

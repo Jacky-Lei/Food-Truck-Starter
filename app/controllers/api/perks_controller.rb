@@ -1,4 +1,4 @@
-class Api::perkController < ApplicationController
+class Api::perksController < ApplicationController
   def create
     @perk = Perk.new(perk_params)
 

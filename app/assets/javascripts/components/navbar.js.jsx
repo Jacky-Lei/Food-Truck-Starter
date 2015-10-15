@@ -22,7 +22,7 @@ window.Navbar = React.createClass({
               </ul>
 
               <ul className="nav navbar-nav navbar-right">
-                <li onClick={sessionUtil.logOut} ><a href="">Log Out</a></li>
+                <li onClick={SessionUtil.logOut} ><a href="">Log Out</a></li>
                 <li><a href="#">Profile</a></li>
 
               </ul>

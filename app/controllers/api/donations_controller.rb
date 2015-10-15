@@ -1,4 +1,4 @@
-class Api::donationController < ApplicationController
+class Api::donationsController < ApplicationController
   def create
     @donation = Donation.new(donation_params)
 

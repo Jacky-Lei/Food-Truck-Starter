@@ -8,6 +8,10 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={App}>
+        <IndexRoute component={Homepage}/>
+        <Route path="pokemon/:pokemonId" component={PokemonDetail} />
+
+
       </Route>
     </Router>
   ), rootEl);

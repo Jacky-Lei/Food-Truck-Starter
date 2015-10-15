@@ -1,4 +1,4 @@
-class Api::foodtruckController < ApplicationController
+class Api::FoodtrucksController < ApplicationController
   def create
     @foodtruck = Foodtruck.new(foodtruck_params)
 

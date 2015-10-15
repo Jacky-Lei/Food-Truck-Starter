@@ -1,4 +1,4 @@
-window.sessionUtil = {
+window.SessionUtil = {
   logOut: function (){
     $.ajax({
       url: "/session",
