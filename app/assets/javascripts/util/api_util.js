@@ -8,5 +8,14 @@ window.ApiUtil = {
     })
   },
 
+  fetchSingleFoodtruck: function () {
+    $.ajax({
+      url: "api/foodtrucks",
+      success: function (foodtruck) {
+        ApiActions.receiveSingleFoodtruck(foodtruck);
+      }
+    })
+  },
+
 
 }

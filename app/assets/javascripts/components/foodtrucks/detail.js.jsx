@@ -7,8 +7,8 @@ window.FoodtruckDetail = React.createClass({
     this.setState(this.getStateFromStore());
   },
 
-  componentWillReceiveProps: function (newProps) {
-    ApiUtil.fetchSingleFoodtruck(parseInt(newProps.params.foodtruckId));
+  getInitialState: function () {
+    return this.getStateFromStore();
   },
 
   componentDidMount: function () {

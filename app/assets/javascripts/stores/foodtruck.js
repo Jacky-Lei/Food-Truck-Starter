@@ -1,5 +1,7 @@
 (function () {
   var FOODTRUCK_INDEX_CHANGE_EVENT = "foodtrucksIndexChange";
+  var FOODTRUCK_DETAIL_CHANGE_EVENT = "foodtrucksIndexChange";
+
   var _foodtrucks = [];
 
   var resetFoodtrucks = function (foodtrucks) {
@@ -31,6 +33,14 @@
       return foodtruck;
     },
 
+    addFoodtruckDetailChangeListener: function (callback) {
+      this.on(FOODTRUCK_DETAIL_CHANGE_EVENT, callback);
+    },
+
+    removeFoodtruckDetailChangeListener: function (callback) {
+      this.removeListener(FOODTRUCK_DETAIL_CHANGE_EVENT, callback);
+    },
+
     addFoodtruckIndexChangeListener: function (callback) {
       this.on(FOODTRUCK_INDEX_CHANGE_EVENT, callback);
     },
@@ -40,13 +50,19 @@
     },
 
     dispatcherID: AppDispatcher.register(function (payload) {
-      if(payload.actionType === FoodtruckConstants.FOODTRUCKS_RECEIVED){
-        resetFoodtrucks(payload.foodtrucks);
-        FoodtruckStore.emit(FOODTRUCK_INDEX_CHANGE_EVENT);
-      };
+      switch(payload.actionType) {
+        case FoodtruckConstants.FOODTRUCKS_RECEIVED:
+          resetFoodtrucks(payload.foodtrucks);
+          FoodtruckStore.emit(FOODTRUCK_INDEX_CHANGE_EVENT);
+          break;
+        case FoodtruckConstants.FOODTRUCK_RECEIVED:
+          resetFoodtruck(payload.foodtruck);
+          FoodtruckStore.emit(FOODTRUCK_DETAIL_CHANGE_EVENT);
+          break;
+      }
 
     })
 
 
-  })
+  });
 })();

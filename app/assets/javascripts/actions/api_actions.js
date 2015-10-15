@@ -6,4 +6,11 @@ window.ApiActions = {
     });
   },
 
+  receiveSingleFoodtruck: function (foodtruck) {
+    AppDispatcher.dispatch({
+      actionType: FoodtruckConstants.FOODTRUCK_RECEIVED,
+      foodtruck: foodtruck
+    });
+  },
+
 }
