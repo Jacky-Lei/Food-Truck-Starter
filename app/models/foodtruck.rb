@@ -20,7 +20,7 @@ class Foodtruck < ActiveRecord::Base
   validates :funding_goal, numericality: true
 
   belongs_to :category
-  belongs_to :user
+  belongs_to(:user, foreign_key: :author_id)
   has_many :donations
   has_many :perks
 

@@ -11,10 +11,10 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :foodtrucks
+  has_many(:foodtrucks, foreign_key: :author_id)
   has_many :donations
 
-  
+
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :password_digest, :username, :session_token, presence: true
   attr_reader :password

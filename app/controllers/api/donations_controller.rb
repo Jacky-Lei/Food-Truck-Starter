@@ -1,18 +1,17 @@
 class Api::donationsController < ApplicationController
   def create
-    @donation = Donation.new(donation_params)
+
+    @donation = current_user.donations.new(donation_params)
+
+    @donation.foodtruck_id = (params[:foodtruck][:id])
+
+
 
     if @donation.save
       render :show
     else
       render json: @donation.errors.full_messages, status: 422
     end
-  end
-
-  def destroy
-    @donation = Donation.find(params[:id])
-    @donation.destroy
-    render :show
   end
 
   def index
@@ -27,7 +26,7 @@ class Api::donationsController < ApplicationController
 
   def donation_params
     params.require(:donation).permit(
-      :image_url, :attack, :defense, :name, :poke_type, moves: []
+      :amount
     )
   end
 end

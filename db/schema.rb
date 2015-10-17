@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014175435) do
+ActiveRecord::Schema.define(version: 20151015233716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,15 @@ ActiveRecord::Schema.define(version: 20151014175435) do
   create_table "foodtrucks", force: :cascade do |t|
     t.string   "title",                                                                                              null: false
     t.text     "description",                                                                                        null: false
-    t.string   "author_id",                                                                                          null: false
     t.date     "end_date",                                                                                           null: false
     t.string   "image",        default: "http://images.clipartpanda.com/food-delivery-truck-clipart-yTo8MzjTE.jpeg"
     t.integer  "category_id",                                                                                        null: false
     t.integer  "funding_goal",                                                                                       null: false
     t.datetime "created_at",                                                                                         null: false
     t.datetime "updated_at",                                                                                         null: false
+    t.integer  "author_id"
   end
 
-  add_index "foodtrucks", ["author_id"], name: "index_foodtrucks_on_author_id", using: :btree
   add_index "foodtrucks", ["category_id"], name: "index_foodtrucks_on_category_id", using: :btree
 
   create_table "perks", force: :cascade do |t|

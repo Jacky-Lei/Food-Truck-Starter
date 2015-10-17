@@ -1,4 +1,7 @@
+var Link = ReactRouter.Link;
+
 window.Navbar = React.createClass({
+  mixins: [ReactRouter.History],
   render: function (){
     if (window.CURRENT_USER_ID) {
       return(
@@ -11,13 +14,18 @@ window.Navbar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Food Truck Starter</a>
+              <ul className="nav navbar-nav">
+                <li>
+              <Link to="/">Food Truck Starter</Link>
+              </li>
+              </ul>
             </div>
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="#">Explore Food Trucks <span className="sr-only">(current)</span></a></li>
-                <li><a href="#">Start A Food Truck</a></li>
+                <li><Link to="/indexfoodtruck">Explore Food Trucks</Link></li>
+                {/* <li className="active"><a href="#">Explore Food Trucks <span className="sr-only">(current)</span></a></li> */}
+                <li><Link to="/createfoodtruck">Start a Food Truck</Link></li>
 
               </ul>
 
@@ -48,13 +56,18 @@ window.Navbar = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Food Truck Starter</a>
+              <ul className="nav navbar-nav">
+                <li>
+              <Link to="/">Food Truck Starter</Link>
+              </li>
+              </ul>
             </div>
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="active"><a href="#">Explore Food Trucks <span className="sr-only">(current)</span></a></li>
-                <li><a href="#">Start A Food Truck</a></li>
+                <li><Link to="/indexfoodtruck">Explore Food Trucks</Link></li>
+                {/* <li className="active"><a href="#">Explore Food Trucks <span className="sr-only">(current)</span></a></li> */}
+                <li><a href="/session/new">Start A Food Truck</a></li>
 
               </ul>
 

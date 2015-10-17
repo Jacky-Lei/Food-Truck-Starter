@@ -9,6 +9,7 @@
   };
 
   var resetFoodtruck = function (foodtruck) {
+    
   var switched = false;
   _foodtrucks.forEach(function (ft) {
     if(ft.id === foodtruck.id) {

@@ -8,9 +8,11 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={App}>
+        <Route path="/createfoodtruck" component={FoodtruckForm} />
+        <Route path="/indexfoodtruck" component={FoodtruckIndex} />
         <IndexRoute component={Homepage}/>
       </Route>
-      <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
+      <Route path="/foodtruck/:foodtruckId" component={foodtruck: FoodtruckDetail} />
     </Router>
   ), rootEl);
 });
