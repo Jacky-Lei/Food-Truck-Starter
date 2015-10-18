@@ -10,9 +10,10 @@ $(function () {
       <Route path="/" component={App}>
         <Route path="/createfoodtruck" component={FoodtruckForm} />
         <Route path="/indexfoodtruck" component={FoodtruckIndex} />
+        <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
         <IndexRoute component={Homepage}/>
       </Route>
-      <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
+
     </Router>
   ), rootEl);
 });

@@ -5,7 +5,7 @@ window.ApiUtil = {
       success: function (foodtrucks) {
         ApiActions.receiveAllFoodtrucks(foodtrucks);
       }
-    })
+    });
   },
 
   fetchSingleFoodtruck: function (id) {
@@ -14,7 +14,7 @@ window.ApiUtil = {
       success: function (foodtruck) {
         ApiActions.receiveSingleFoodtruck(foodtruck);
       }
-    })
+    });
   },
 
   createFoodtruck: function (foodtruck, callback) {
@@ -26,9 +26,24 @@ window.ApiUtil = {
         ApiActions.receiveSingleFoodtruck(foodtruck);
         callback && callback(foodtruck.id);
       }
-    })
+    });
+  },
+
+  createDonation: function (donation, callback) {
+    $.ajax({
+
+      url: "api/donations/",
+      method: "POST",
+      data: {donation: donation},
+      success: function (donation) {
+        ApiUtil.fetchSingleFoodtruck(donation.foodtruck.id);
+      },
+      error: function (responseData) {
+        console.log(responseData);
+      }
+    });
   },
 
 
 
-}
+};

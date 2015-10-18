@@ -1,12 +1,7 @@
-class Api::donationsController < ApplicationController
+class Api::DonationsController < ApplicationController
   def create
 
     @donation = current_user.donations.new(donation_params)
-
-    @donation.foodtruck_id = (params[:foodtruck][:id])
-
-
-
     if @donation.save
       render :show
     else
@@ -14,19 +9,13 @@ class Api::donationsController < ApplicationController
     end
   end
 
-  def index
-    @donation = Donation.all
-  end
-
   def show
     @donation = Donation.find(params[:id])
   end
 
-  private
-
   def donation_params
     params.require(:donation).permit(
-      :amount
+      :amount, :foodtruck_id
     )
   end
 end

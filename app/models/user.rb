@@ -12,7 +12,7 @@
 
 class User < ActiveRecord::Base
   has_many(:foodtrucks, foreign_key: :author_id)
-  has_many :donations
+  has_many(:donations, foreign_key: :backer_id)
 
 
   validates :password, length: {minimum: 6, allow_nil: true}
