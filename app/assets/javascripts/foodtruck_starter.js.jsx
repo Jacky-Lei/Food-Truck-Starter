@@ -12,7 +12,7 @@ $(function () {
         <Route path="/indexfoodtruck" component={FoodtruckIndex} />
         <IndexRoute component={Homepage}/>
       </Route>
-      <Route path="/foodtruck/:foodtruckId" component={foodtruck: FoodtruckDetail} />
+      <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
     </Router>
   ), rootEl);
 });

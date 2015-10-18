@@ -19,8 +19,6 @@ window.FoodtruckDetail = React.createClass({
     ApiUtil.fetchSingleFoodtruck(parseInt(this.props.params.foodtruckId));
   },
 
-
-
   componentWillUnmount: function () {
     FoodtruckStore.removeFoodtruckDetailChangeListener(this._onChange);
   },
@@ -31,43 +29,35 @@ window.FoodtruckDetail = React.createClass({
     if(this.state.foodtruck === undefined) {return <div></div>;}
 
 
+
       return(
         <div>
           <div className="detail">
             <img src={this.state.foodtruck.image} />
             {['title', 'description', 'end_date', 'funding_goal'].map(function (attr) {
+
+
               return <p key={attr}>{attr}: {this.state.foodtruck[attr]}</p>;
               }.bind(this))}
 
 
               <p>{this.state.foodtruck.user.username}</p>
-
               <p>{this.state.foodtruck.category.name}</p>
-
-            <p>{this.state.foodtruck.donations.map(
-
+              <p>{this.state.foodtruck.donations}</p>
 
 
-              return(
-
-                <ul className="items">
-                  {donationSum = 0;
-                    for (i = 0; i < this.state.foodtruck.donations; i++){
-                      donationSum += this.state.foodtruck.donations[i];
-                    }
-                    return <DonationBar donationSum={donationSum};
-                    return <FoodtruckItem key={foodtruck.id} foodtruck={foodtruck} />;
-
-                  })}
-                </ul>
-              );
-
-
+              <p>
+                {var donationSum = 0;
+                  for (i = 0; i < this.state.foodtruck.donations.length; i++){
+                    donationSum += this.state.foodtruck.donations[i].amount;
+                  };
+                  return <DonationBar donationSum={donationSum}/>;
+                  }
+              </p>
 
           </div>
         </div>
       );
-
   }
 
 });

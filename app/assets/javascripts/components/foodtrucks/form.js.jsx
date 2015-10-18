@@ -37,6 +37,7 @@ window.FoodtruckForm = React.createClass({
 
 
          if (result){
+           $(pic).text = "Upload Good";
            this.blankAttrs.image = result[0].url;
          }
          console.log(error, result)
@@ -95,7 +96,7 @@ window.FoodtruckForm = React.createClass({
         </div>
 
         <div>
-          <button onClick={this._placeImage}>Picture</button>
+          <button onClick={this._placeImage} id="pic">Picture</button>
         </div>
 
 

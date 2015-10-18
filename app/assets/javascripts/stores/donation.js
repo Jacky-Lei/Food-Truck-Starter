@@ -1,3 +1,5 @@
+{/*
+
 (function () {
   var DonationStore = {
   var _donations: [],
@@ -15,3 +17,5 @@
   })
 
 }})
+
+*/}

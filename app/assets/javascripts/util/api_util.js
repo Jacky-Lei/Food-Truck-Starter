@@ -29,14 +29,6 @@ window.ApiUtil = {
     })
   },
 
-  fetchAllDonations: function () {
-    $.ajax({
-      url: "api/donations",
-      success: function (donations) {
-        ApiActions.receiveAllDonations(donations);
-      }
-    })
-  },
 
 
 }
