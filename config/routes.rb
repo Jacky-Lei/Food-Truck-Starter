@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :foodtrucks, only: [:create, :index, :show]
     resources :donations, only: [:create, :index, :show]
     resources :perks, only: [:create, :index]
+    resources :categories, only: [:create, :index, :show]
   end
 end

@@ -24,7 +24,6 @@ window.FoodtruckDetail = React.createClass({
 
   render: function () {
 
-
     if(this.state.foodtruck === null) {return <div></div>;}
       else{
           var donationSum = 0;
@@ -41,13 +40,13 @@ window.FoodtruckDetail = React.createClass({
               }.bind(this))}
 
 
-              <p>{this.state.foodtruck.user.username}</p>
-              <p>{this.state.foodtruck.category.name}</p>
-              
+              <p>Created by: {this.state.foodtruck.user.username}</p>
+              <p>Category: {this.state.foodtruck.category.name}</p>
 
 
-              <p><DonationBar donationSum={donationSum}/>;</p>
-              <p><DonationForm foodtruckId={this.props.params.foodtruckId}/>;</p>
+              <p><DonationBar donationSum={donationSum}/></p>
+
+              <p><DonationForm foodtruckId={this.props.params.foodtruckId}/></p>
 
           </div>
         </div>

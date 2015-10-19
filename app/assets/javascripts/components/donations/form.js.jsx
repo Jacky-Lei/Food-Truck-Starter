@@ -23,7 +23,14 @@ window.DonationForm = React.createClass({
     this.setState(this.blankAttrs);
   },
 
+  redirectToSignUp: function () {
+    event.preventDefault();
+    window.location="/users/new";
+  },
+
   render: function () {
+
+    if (window.CURRENT_USER_ID) {
     return(
       <form className="new-donation" onSubmit={this.createDonation}>
 
@@ -42,5 +49,29 @@ window.DonationForm = React.createClass({
 
       </form>
     );
+
+  } else {
+
+    return(
+      <form className="new-donation" onSubmit={this.redirectToSignUp}>
+
+        <div>
+          <label htmlFor='donation_amount'>Amount:</label>
+          <input
+            type='number'
+            min='0'
+            id='donation_amount'
+            valueLink={this.linkState("amount")}
+          />
+        </div>
+
+        <button>Sign Up to Donate!</button>
+        <br />
+
+      </form>
+    );
+
+
+  }
   }
 });

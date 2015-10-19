@@ -4,7 +4,9 @@ window.Filter = React.createClass({
     <div>
       <div className="filter">
 
+        <CategoryIndex/>
         <FoodtruckIndex/>
+
       </div>
 
       {this.props.children}

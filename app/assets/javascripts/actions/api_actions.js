@@ -13,4 +13,18 @@ window.ApiActions = {
     });
   },
 
+  receiveAllCategories: function (categories) {
+    AppDispatcher.dispatch({
+      actionType: CategoryConstants.CATEGORIES_RECEIVED,
+      categories: categories
+    });
+  },
+
+  receiveSingleCategory: function (category) {
+    AppDispatcher.dispatch({
+      actionType: CategoryConstants.CATEGORY_RECEIVED,
+      category: category
+    });
+  },
+
 }

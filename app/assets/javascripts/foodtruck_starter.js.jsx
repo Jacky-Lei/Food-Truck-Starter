@@ -8,10 +8,10 @@ $(function () {
   React.render((
     <Router>
       <Route path="/" component={App}>
+        <IndexRoute component={Homepage}/>
         <Route path="/createfoodtruck" component={FoodtruckForm} />
         <Route path="/indexfoodtruck" component={FoodtruckIndex} />
         <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
-        <IndexRoute component={Homepage}/>
       </Route>
 
     </Router>

@@ -29,6 +29,7 @@ window.ApiUtil = {
     });
   },
 
+
   createDonation: function (donation, callback) {
     $.ajax({
 
@@ -40,6 +41,24 @@ window.ApiUtil = {
       },
       error: function (responseData) {
         console.log(responseData);
+      }
+    });
+  },
+
+  fetchAllCategories: function () {
+    $.ajax({
+      url: "api/categories",
+      success: function (categories) {
+        ApiActions.receiveAllCategories(categories);
+      }
+    });
+  },
+
+  fetchSingleCategory: function (id) {
+    $.ajax({
+      url: "api/categories/" + id,
+      success: function (category) {
+        ApiActions.receiveSingleCategory(category);
       }
     });
   },

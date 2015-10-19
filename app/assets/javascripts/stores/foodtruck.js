@@ -29,7 +29,7 @@
       var foodtruck;
       _foodtrucks.forEach(function (ft) {
         if(ft.id === id) { foodtruck = ft; }
-      })
+      });
 
       return foodtruck;
     },
@@ -60,6 +60,7 @@
           resetFoodtruck(payload.foodtruck);
           FoodtruckStore.emit(FOODTRUCK_DETAIL_CHANGE_EVENT);
           break;
+
       }
 
     })

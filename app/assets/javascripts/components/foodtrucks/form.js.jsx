@@ -102,6 +102,9 @@ window.FoodtruckForm = React.createClass({
 
 
 
+        <div><PerkForm detailState={this.state}/></div>
+
+
         <button>Create foodtruck</button>
         <br />
 

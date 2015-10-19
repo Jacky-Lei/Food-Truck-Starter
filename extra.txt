@@ -1,0 +1,82 @@
+createFoodtruck: function (foodtruck, callback1, callback2) {
+  $.ajax({
+    url: "api/foodtrucks/",
+    method: "POST",
+    data: {foodtruck: foodtruck},
+    success: function (foodtruck) {
+      ApiActions.receiveSingleFoodtruck(foodtruck);
+      callback1 && callback1(foodtruck.id)
+      callback2 && callback2(foodtruck.id);
+    }
+  });
+},
+
+<div><PerkForm detailState={this.state}/></div>
+
+
+createFoodtruck: function () {
+  event.preventDefault();
+  var foodtruck = {};
+  Object.keys(this.state).forEach(function (key) {
+    {foodtruck[key] = this.state[key];}
+  }.bind(this))
+
+
+          ApiUtil.createFoodtruck(foodtruck,
+
+          function (foodtruckId) {
+            PerkForm.foodtruck_id = foodtruckId
+          },
+
+          ApiUtil.createPerk(PerkForm.perk),
+
+          function (id) {
+          this.history.pushState(null, "/foodtruck/" + id, {});
+          }.bind(this));
+
+
+
+
+  this.setState(this.blankAttrs);
+
+},
+
+
+
+
+
+
+  mixins: [ReactRouter.History],
+  showHispanic: function () {
+    this.history.pushState(null, '/Hispanic/', {});
+  },
+
+  showAsian: function () {
+    this.history.pushState(null, '/Asian/', {});
+  },
+
+  showAmerican: function () {
+    this.history.pushState(null, '/American/', {});
+  },
+
+  render: function () {
+    return(
+      <ul>
+
+      <li onClick={this.showHispanic} className="Category-list-item">
+        <p>Hispanic</p>
+      </li>
+
+      <li onClick={this.showAsian} className="Category-list-item">
+        <p>Asian</p>
+      </li>
+
+      <li onClick={this.showAmerican} className="Category-list-item">
+        <p>American</p>
+      </li>
+
+      </ul>
+
+    );
+  }
+});
