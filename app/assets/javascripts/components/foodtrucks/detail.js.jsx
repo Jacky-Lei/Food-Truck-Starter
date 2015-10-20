@@ -23,7 +23,6 @@ window.FoodtruckDetail = React.createClass({
   },
 
   render: function () {
-
     if(this.state.foodtruck === null) {return <div></div>;}
       else{
           var donationSum = 0;
@@ -35,30 +34,38 @@ window.FoodtruckDetail = React.createClass({
           var timeDiff = Math.abs(today - finishDay);
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
+          var perkArray = this.state.foodtruck.perks;
+
       return(
         <div>
           <div className="detail">
             <img src={this.state.foodtruck.image} />
             {['title', 'description', 'end_date', 'funding_goal'].map(function (attr) {
 
-              return <p key={attr}>{attr}: {this.state.foodtruck[attr]}</p>;
+              return <div key={attr}>{attr}: {this.state.foodtruck[attr]}</div>;
               }.bind(this))}
 
-              <p>Days left: {diffDays}</p>
+              <div>Days left: {diffDays}</div>
+
+
+                <ol>Perks: {perkArray.map(function (perk){
+                    return <li>{"Name: " + perk.name + " Description: " + perk.description + " Amount: " + perk.amount}</li>;
+
+                    }.bind(this)
+                  )}
+                </ol>
 
 
 
-              <p>Created by: {this.state.foodtruck.user.username}</p>
-              <p>Category: {this.state.foodtruck.category.name}</p>
+
+              <div>Created by: {this.state.foodtruck.user.username}</div>
+              <div>Category: {this.state.foodtruck.category.name}</div>
 
 
-              <p><DonationBar donationSum={donationSum}/></p>
+              <div><DonationBar donationSum={donationSum}/></div>
 
 
-
-
-
-            <p>{this.props.route.path.indexOf("createfoodtruck") === -1 ?  <DonationForm foodtruckId={this.props.params.foodtruckId}/> : <PerkFormIndex foodtruckId={this.props.params.foodtruckId}/> }</p>
+            <div>{this.props.route.path.indexOf("createfoodtruck") === -1 ?  <DonationForm foodtruckId={this.props.params.foodtruckId}/> : <PerkFormIndex foodtruckId={this.props.params.foodtruckId}/> }</div>
 
           </div>
         </div>

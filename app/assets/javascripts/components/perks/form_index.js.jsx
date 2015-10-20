@@ -3,38 +3,26 @@ window.PerkFormIndex = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   blankAttrs: {
-    numRewards: 1,
+    numPerkForms: 1,
   },
 
   getInitialState: function () {
     return this.blankAttrs;
   },
 
-  registerPerkState: function () {
-    event.preventDefault();
-    var perk = {};
-    Object.keys(this.state).forEach(function (key) {
-      {perk[key] = this.state[key];}
-    }.bind(this));
-    console.log("perk registered");
-  },
-
   makePerkForm: function () {
-    event.preventDefault();
-    console.log("hi");
-    this.setState({numRewards: this.state.numRewards + 1});
+    this.setState({numPerkForms: this.state.numPerkForms + 1});
   },
 
 
-  finishPerk: function () {debugger
-    event.preventDefault();
-    this.history.pushState(null, '/foodtruck/' + this.props.foodtruckId, {});
+  finishPerk: function () {
+    this.history.pushState(null, 'foodtruck/' + this.props.foodtruckId, {});
   },
 
   render: function () {
     var formInputs = [];
 
-    for (var i = 0; i < this.state.numRewards; i++) {
+    for (var i = 0; i < this.state.numPerkForms; i++) {
       formInputs.push(
         <PerkForm key={i} foodtruckId={this.props.foodtruckId}/>
       );
@@ -48,9 +36,9 @@ window.PerkFormIndex = React.createClass({
 
       <div>{formInputs}</div>
 
-      <div onClick={this.finishPerk} className="finish-perk-form-button">
-        <p>Finish Food Truck!</p>
-      </div>
+      <button onClick={this.finishPerk} className="finish-perk-form-button">
+        Finish Food Truck!
+      </button>
 
       </div>
 

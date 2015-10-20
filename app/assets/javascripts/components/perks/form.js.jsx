@@ -12,7 +12,7 @@ window.PerkForm = React.createClass({
     return this.blankAttrs;
   },
 
-  registerPerkState: function () {
+  submitPerk: function (event) {
     event.preventDefault();
     var perk = {};
     Object.keys(this.state).forEach(function (key) {
@@ -28,7 +28,7 @@ window.PerkForm = React.createClass({
 
     return(
 
-      <form className="new-perk" onSubmit={this.registerPerkState}>
+      <form className="new-perk" onSubmit={this.submitPerk}>
 
         <div>
           <label htmlFor='perk_name'>Perk Name:</label>
