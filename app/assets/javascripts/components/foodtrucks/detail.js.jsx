@@ -30,6 +30,11 @@ window.FoodtruckDetail = React.createClass({
             this.state.foodtruck.donations.forEach (function (donation) {
               donationSum += donation.amount});
 
+          var today = (new Date()).getTime();
+          var finishDay = (new Date(this.state.foodtruck['end_date'])).getTime();
+          var timeDiff = Math.abs(today - finishDay);
+          var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
       return(
         <div>
           <div className="detail">
@@ -39,6 +44,9 @@ window.FoodtruckDetail = React.createClass({
               return <p key={attr}>{attr}: {this.state.foodtruck[attr]}</p>;
               }.bind(this))}
 
+              <p>Days left: {diffDays}</p>
+
+
 
               <p>Created by: {this.state.foodtruck.user.username}</p>
               <p>Category: {this.state.foodtruck.category.name}</p>
@@ -46,7 +54,11 @@ window.FoodtruckDetail = React.createClass({
 
               <p><DonationBar donationSum={donationSum}/></p>
 
-              <p><DonationForm foodtruckId={this.props.params.foodtruckId}/></p>
+
+
+
+
+            <p>{this.props.route.path.indexOf("createfoodtruck") === -1 ?  <DonationForm foodtruckId={this.props.params.foodtruckId}/> : <PerkFormIndex foodtruckId={this.props.params.foodtruckId}/> }</p>
 
           </div>
         </div>

@@ -4,11 +4,15 @@ window.ContainerForm = React.createClass({
 
   blankAttrs: {
     title: '',
-    description: '',
+    foodtruckDescription: '',
     image: '',
     category: '',
     end_date: '',
-    funding_goal: ''
+    funding_goal: '',
+
+    name: '',
+    perkDesription: '',
+    amount: '',
   },
 
   getInitialState: function () {
@@ -36,14 +40,14 @@ window.ContainerForm = React.createClass({
       <form className="new-foodtruck" onSubmit={this.createFoodtruck}>
 
         <div>
-          <FoodtruckForm/>
+          <FoodtruckForm attrs={this.state}/>
         </div>
 
         <div>
-          <PerkForm/>
+          <PerkForm attrs={this.state}/>
         </div>
 
-        
+
 
         <button>Create foodtruck</button>
         <br />

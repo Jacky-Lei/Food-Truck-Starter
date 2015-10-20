@@ -32,7 +32,6 @@ window.ApiUtil = {
 
   createDonation: function (donation, callback) {
     $.ajax({
-
       url: "api/donations/",
       method: "POST",
       data: {donation: donation},
@@ -59,6 +58,18 @@ window.ApiUtil = {
       url: "api/categories/" + id,
       success: function (category) {
         ApiActions.receiveSingleCategory(category);
+      }
+    });
+  },
+
+  createPerk: function (perk, callback) {
+    $.ajax({
+      url: "api/perks/",
+      method: "POST",
+      data: {perk: perk},
+      success: function (perk) {
+        ApiActions.receiveSingleFoodtruck(foodtruck);
+        callback && callback(perk);
       }
     });
   },

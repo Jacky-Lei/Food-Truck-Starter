@@ -1,10 +1,11 @@
 window.PerkForm = React.createClass({
 
-  mixins: [React.addons.LinkedStateMixin],
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   blankAttrs: {
     name: '',
     description: '',
+    amount: '',
   },
 
   getInitialState: function () {
@@ -17,11 +18,16 @@ window.PerkForm = React.createClass({
     Object.keys(this.state).forEach(function (key) {
       {perk[key] = this.state[key];}
     }.bind(this));
-    console.log("perk registered");
+    perk["foodtruck_id"] = this.props.foodtruckId;
+    ApiUtil.createPerk(perk, function (perk) {
+      console.log(perk.name + "registered");
+    });
   },
 
   render: function () {
+
     return(
+
       <form className="new-perk" onSubmit={this.registerPerkState}>
 
         <div>
@@ -52,11 +58,10 @@ window.PerkForm = React.createClass({
             />
         </div>
 
-        <button>Add Perk</button>
-
+        <button>Submit Perk</button>
         <br />
-
       </form>
+
     );
   }
 });

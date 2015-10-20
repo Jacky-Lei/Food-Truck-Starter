@@ -1,4 +1,4 @@
-class Api::perksController < ApplicationController
+class Api::PerksController < ApplicationController
   def create
     @perk = Perk.new(perk_params)
 
@@ -9,14 +9,8 @@ class Api::perksController < ApplicationController
     end
   end
 
-  def destroy
-    @perk = Perk.find(params[:id])
-    @perk.destroy
-    render :show
-  end
-
   def index
-    @perk = Perk.all
+    @perks = Perk.all
   end
 
   def show
@@ -27,7 +21,7 @@ class Api::perksController < ApplicationController
 
   def perk_params
     params.require(:perk).permit(
-      :image_url, :attack, :defense, :name, :poke_type, moves: []
+      :name, :description, :amount, :foodtruck_id
     )
   end
 end

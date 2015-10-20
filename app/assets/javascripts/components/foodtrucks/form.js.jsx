@@ -20,27 +20,23 @@ window.FoodtruckForm = React.createClass({
     var foodtruck = {};
     Object.keys(this.state).forEach(function (key) {
       {foodtruck[key] = this.state[key];}
-    }.bind(this))
-
+    }.bind(this));
 
     ApiUtil.createFoodtruck(foodtruck, function (id) {
-      this.history.pushState(null, "/foodtruck/" + id, {});
+      this.history.pushState(null, "/createfoodtruck/" + id, {});
     }.bind(this));
     this.setState(this.blankAttrs);
-
   },
 
   _placeImage: function(){
     event.preventDefault();
     cloudinary.openUploadWidget({ cloud_name: 'akantoword', upload_preset: 'i8ho2w3y'},
        function(error, result) {
-
-
          if (result){
            $(pic).text = "Upload Good";
            this.blankAttrs.image = result[0].url;
          }
-         console.log(error, result)
+         console.log(error, result);
        }.bind(this),false);
   },
 
@@ -99,13 +95,8 @@ window.FoodtruckForm = React.createClass({
           <button onClick={this._placeImage} id="pic">Picture</button>
         </div>
 
-
-
-
-        <div><PerkForm detailState={this.state}/></div>
-
-
         <button>Create foodtruck</button>
+
         <br />
 
       </form>

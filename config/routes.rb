@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show]
     resources :foodtrucks, only: [:create, :index, :show]
     resources :donations, only: [:create, :index, :show]
-    resources :perks, only: [:create, :index]
+    resources :perks, only: [:create, :index, :show]
     resources :categories, only: [:create, :index, :show]
   end
 end

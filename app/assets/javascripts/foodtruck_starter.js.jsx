@@ -10,6 +10,8 @@ $(function () {
       <Route path="/" component={App}>
         <IndexRoute component={Homepage}/>
         <Route path="/createfoodtruck" component={FoodtruckForm} />
+        <Route path="/createfoodtruck/:foodtruckId" component={FoodtruckDetail} />
+
         <Route path="/indexfoodtruck" component={FoodtruckIndex} />
         <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
       </Route>
