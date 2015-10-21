@@ -5,9 +5,10 @@ window.CategoryItem = React.createClass({
 
   render: function () {
     return(
-      <li onClick={this.showFoodtruckIndex} className="category-list-item">
-        <p>Category Name: {this.props.category.name}</p>
-      </li>
+      <div onClick={this.showFoodtruckIndex} className="category-list-item">
+        <button>Category Name: {this.props.category.name}</button>
+      </div>
+
 
     );
   }

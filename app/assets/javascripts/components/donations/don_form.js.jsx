@@ -4,8 +4,8 @@ window.DonationForm = React.createClass({
 
   blankAttrs: {
     amount: '',
-    perk_id: undefined
-
+    perk_id: undefined,
+    toggleDonation: false
   },
 
   getInitialState: function () {
@@ -24,6 +24,11 @@ window.DonationForm = React.createClass({
     PerkStore.removePerkChangeListener(this._onPerkChange);
   },
 
+  resetlife: function () {
+    setTimeout(function() {
+      this.setState(this.blankAttrs);}.bind(this), 2000)
+  },
+
   createDonation: function () {
 
     event.preventDefault();
@@ -36,7 +41,8 @@ window.DonationForm = React.createClass({
 
     donation.foodtruck_id = this.props.foodtruckId;
     ApiUtil.createDonation(donation);
-    this.setState(this.blankAttrs);
+    this.setState({toggleDonation: true}, this.resetlife);
+
   },
 
   redirectToSignUp: function () {
@@ -46,10 +52,19 @@ window.DonationForm = React.createClass({
 
   render: function () {
 
+
     if (window.CURRENT_USER_ID) {
+
+      if(this.state.toggleDonation === false){
+        renderDonationConfirmation = <div></div>;
+        } else {
+          renderDonationConfirmation = <div><DonationConfirmation donationAmount={this.state.amount}/></div>;
+        }
+
     return(
+      <div>
       <form className="new-donation" onSubmit={this.createDonation}>
-        <h3>id: {this.state.perk_id}</h3>
+
         <div>
           <label htmlFor='donation_amount'>Amount:</label>
           <input
@@ -64,6 +79,9 @@ window.DonationForm = React.createClass({
         <br />
 
       </form>
+
+          {renderDonationConfirmation}
+      </div>
     );
 
   } else {

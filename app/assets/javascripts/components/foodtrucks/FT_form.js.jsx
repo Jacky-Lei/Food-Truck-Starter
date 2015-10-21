@@ -5,7 +5,6 @@ window.FoodtruckForm = React.createClass({
   blankAttrs: {
     title: '',
     description: '',
-    image: '',
     category: '',
     end_date: '',
     funding_goal: ''
@@ -33,8 +32,9 @@ window.FoodtruckForm = React.createClass({
     cloudinary.openUploadWidget({ cloud_name: 'akantoword', upload_preset: 'i8ho2w3y'},
        function(error, result) {
          if (result){
+
            $(pic).text = "Upload Good";
-           this.blankAttrs.image = result[0].url;
+           this.state.image = result[0].url;
          }
          console.log(error, result);
        }.bind(this),false);
@@ -83,7 +83,8 @@ window.FoodtruckForm = React.createClass({
 
         <div>
           <label htmlFor='foodtruck_category'>Category:</label>
-          <select id='foodtruck_category' valueLink={this.linkState("category") }defaultValue="Hispanic" >
+          <select id='foodtruck_category' valueLink={this.linkState("category")} >
+            <option selected ="" >Select A Value</option>
 
             <option value="Hispanic" >Hispanic</option>
             <option value="Asian" >Asian</option>

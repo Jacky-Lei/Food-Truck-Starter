@@ -1,4 +1,6 @@
 window.ApiUtil = {
+
+
   fetchAllFoodTrucks: function () {
     $.ajax({
       url: "api/foodtrucks",
@@ -49,6 +51,8 @@ window.ApiUtil = {
       url: "api/categories",
       success: function (categories) {
         ApiActions.receiveAllCategories(categories);
+      },
+      error: function (cat, msg) {
       }
     });
   },

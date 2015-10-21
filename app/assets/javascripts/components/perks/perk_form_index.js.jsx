@@ -16,6 +16,7 @@ window.PerkFormIndex = React.createClass({
 
 
   finishPerk: function () {
+    ApiUtil.fetchSingleFoodtruck(parseInt(this.props.foodtruckId));
     this.history.pushState(null, 'foodtruck/' + this.props.foodtruckId, {});
   },
 

@@ -12,3 +12,19 @@
   }; }
 
 </div>
+
+
+logInGuest: function (user) {
+  $.ajax({
+    url: "/session/",
+    method: "POST",
+    success: function () {
+      redirect
+    }
+  });
+},
+
+
+<li><a onClick={ApiUtil.logInGuest(user)}>Guest Log In</a></li>
+
+  var user = {username: tester, password: tester};

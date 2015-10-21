@@ -16,7 +16,10 @@ window.Navbar = React.createClass({
               </button>
               <ul className="nav navbar-nav">
                 <li>
-              <Link to="/">Food Truck Starter</Link>
+              <Link to="/"><img className="main-logo" src="http://res.cloudinary.com/akantoword/image/upload/v1445407180/Screen_Shot_2015-10-20_at_10.58.52_PM_m8g1me.png" /></Link>
+
+
+
               </li>
               </ul>
             </div>
@@ -43,6 +46,8 @@ window.Navbar = React.createClass({
 
 
     } else {
+
+
 
 
 
@@ -75,7 +80,6 @@ window.Navbar = React.createClass({
                 <li><a href="/users/new">Sign Up</a></li>
                 <li><a href="/session/new">Log In</a></li>
                 <li><a href="#">Guest Log In</a></li>
-
               </ul>
             </div>
           </div>

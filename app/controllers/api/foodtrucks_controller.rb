@@ -1,6 +1,7 @@
 class Api::FoodtrucksController < ApplicationController
   def create
 
+
     # foodtruck_params[:author_id] = current_user.id
     # foodtruck_params[:category_id] = (Category.find_by_name(foodtruck_params[:category])).id
     # @foodtruck = Foodtruck.new(foodtruck_params)

@@ -1,3 +1,23 @@
 // Place all the styles related to the Foodtrucks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.foodtruck-list-item{
+  width: 350px;
+  height: 340px;
+  float: left;
+  border-width: 10px;
+  border-color: red;
+  padding: 10px;
+  border-style: groove;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.foodtruck-list-item:hover {
+  border-color: yellow;
+}
+
+.foodtruck-list-item-image{
+  width: 100%;
+}
