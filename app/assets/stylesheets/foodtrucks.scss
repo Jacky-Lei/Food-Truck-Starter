@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.foodtruck-list-item{
+.foodtruck-item{
   width: 350px;
   height: 340px;
   float: left;
@@ -14,10 +14,31 @@
   cursor: pointer;
 }
 
-.foodtruck-list-item:hover {
-  border-color: yellow;
+.foodtruck-index{
+  clear: both;
 }
 
-.foodtruck-list-item-image{
+.foodtruck-item-image{
   width: 100%;
+}
+
+.foodtruck-detail{
+  padding: 30px;
+}
+
+.foodtruck-detail-image{
+  padding: 30px;
+}
+
+.foodtruck-detail-title{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.foodtruck-detail-by{
+
+}
+
+.foodtruck-detail-by-username{
+  font-style: italic;
 }

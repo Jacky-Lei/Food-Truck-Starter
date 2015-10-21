@@ -10,10 +10,10 @@ window.FoodtruckItem = React.createClass({
         donationSum += donation.amount});
 
     return(
-      <div onClick={this.showDetail} className="foodtruck-list-item">
+      <div onClick={this.showDetail} className="foodtruck-item">
 
         <div>{this.props.foodtruck.title}</div>
-        <img src={this.props.foodtruck.image} className="foodtruck-list-item-image" />
+        <img src={this.props.foodtruck.image} className="foodtruck-item-image" />
 
         <p>Goal: $ {this.props.foodtruck.funding_goal}</p>
         <p>Raised: $ {donationSum}</p>

@@ -35,20 +35,22 @@ window.FoodtruckDetail = React.createClass({
           var timeDiff = Math.abs(today - finishDay);
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-
-
       return(
 
         <div>
-          <div className="detail">
-            <img src={this.state.foodtruck.image} />
-            {['title', 'description', 'end_date', 'funding_goal'].map(function (attr) {
+          <div className="foodtruck-detail">
+            <h1 className="foodtruck-detail-title"> {this.state.foodtruck.title}</h1>
+            <h4 className="foodtruck-detail-by">by: <div className="foodtruck-detail-by-username">
+              {this.state.foodtruck.user.username}
+            </div></h4>
+
+            <img className="foodtruck-detail-image" src={this.state.foodtruck.image} />
+            {['description', 'end_date', 'funding_goal'].map(function (attr) {
 
               return <div key={attr}>{attr}: {this.state.foodtruck[attr]}</div>;
               }.bind(this))}
 
               <div>Days left: {diffDays}</div>
-
 
                 <ol>Perks: {this.state.foodtruck.perks.map(function (perk){
                     return <PerkItem key={perk.id} perk={perk}/>;
@@ -57,10 +59,6 @@ window.FoodtruckDetail = React.createClass({
                 </ol>
 
 
-
-
-
-              <div>Created by: {this.state.foodtruck.user.username}</div>
               <div>Category: {this.state.foodtruck.category.name}</div>
 
 
