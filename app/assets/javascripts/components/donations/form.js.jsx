@@ -4,10 +4,24 @@ window.DonationForm = React.createClass({
 
   blankAttrs: {
     amount: '',
+    perk_id: undefined
+
   },
 
   getInitialState: function () {
     return this.blankAttrs;
+  },
+
+  _onPerkChange: function () {
+    this.setState({ perk_id: PerkStore.getPerkId(), amount: PerkStore.getPerkAmount()});
+  },
+
+  componentDidMount: function () {
+    PerkStore.addPerkChangeListener(this._onPerkChange);
+  },
+
+  componentWillUnmount: function () {
+    PerkStore.removePerkChangeListener(this._onPerkChange);
   },
 
   createDonation: function () {
@@ -15,10 +29,12 @@ window.DonationForm = React.createClass({
     event.preventDefault();
     var donation = {};
 
-      donation["amount"] = this.state["amount"];
+    donation.amount = this.state.amount;
+    if(this.state.perk_id) {
+      donation.perk_id = this.state.perk_id;
+    }
 
-
-    donation["foodtruck_id"] = this.props.foodtruckId;
+    donation.foodtruck_id = this.props.foodtruckId;
     ApiUtil.createDonation(donation);
     this.setState(this.blankAttrs);
   },
@@ -33,7 +49,7 @@ window.DonationForm = React.createClass({
     if (window.CURRENT_USER_ID) {
     return(
       <form className="new-donation" onSubmit={this.createDonation}>
-
+        <h3>id: {this.state.perk_id}</h3>
         <div>
           <label htmlFor='donation_amount'>Amount:</label>
           <input

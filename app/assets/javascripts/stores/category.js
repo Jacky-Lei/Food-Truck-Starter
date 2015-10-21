@@ -1,5 +1,3 @@
-
-
 (function () {
   var CATEGORY_INDEX_CHANGE_EVENT = "categoriesIndexChange";
   var CATEGORY_DETAIL_CHANGE_EVENT = "categoriesIndexChange";

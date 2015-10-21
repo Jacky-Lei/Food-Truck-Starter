@@ -15,7 +15,7 @@ class Api::DonationsController < ApplicationController
 
   def donation_params
     params.require(:donation).permit(
-      :amount, :foodtruck_id
+      :amount, :foodtruck_id, :perk_id
     )
   end
 end

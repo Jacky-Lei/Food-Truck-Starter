@@ -83,11 +83,11 @@ window.FoodtruckForm = React.createClass({
 
         <div>
           <label htmlFor='foodtruck_category'>Category:</label>
-          <select id='foodtruck_category' valueLink={this.linkState("category")}>
-            <option selected="Hispanic"></option>
-            <option value="Hispanic" >Hispanic</option>;
-            <option value="Asian" >Asian</option>;
-            <option value="Western" >Western</option>;
+          <select id='foodtruck_category' valueLink={this.linkState("category") }defaultValue="Hispanic" >
+
+            <option value="Hispanic" >Hispanic</option>
+            <option value="Asian" >Asian</option>
+            <option value="Western" >Western</option>
           </select>
         </div>
 

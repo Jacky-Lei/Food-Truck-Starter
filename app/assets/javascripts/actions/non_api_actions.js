@@ -7,4 +7,11 @@ window.NonApiActions = {
     });
   },
 
+  receivePerk: function (perk) {
+    AppDispatcher.dispatch({
+      actionType: PerkConstants.PERK_RECEIVED,
+      perk: perk
+    });
+  },
+
 };

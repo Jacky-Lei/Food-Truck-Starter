@@ -23,6 +23,7 @@ window.FoodtruckDetail = React.createClass({
   },
 
   render: function () {
+
     if(this.state.foodtruck === null) {return <div></div>;}
       else{
           var donationSum = 0;
@@ -34,9 +35,10 @@ window.FoodtruckDetail = React.createClass({
           var timeDiff = Math.abs(today - finishDay);
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-          var perkArray = this.state.foodtruck.perks;
+
 
       return(
+
         <div>
           <div className="detail">
             <img src={this.state.foodtruck.image} />
@@ -48,12 +50,12 @@ window.FoodtruckDetail = React.createClass({
               <div>Days left: {diffDays}</div>
 
 
-                <ol>Perks: {perkArray.map(function (perk){
-                    return <li>{"Name: " + perk.name + " Description: " + perk.description + " Amount: " + perk.amount}</li>;
-
-                    }.bind(this)
+                <ol>Perks: {this.state.foodtruck.perks.map(function (perk){
+                    return <PerkItem key={perk.id} perk={perk}/>;
+                    }
                   )}
                 </ol>
+
 
 
 
