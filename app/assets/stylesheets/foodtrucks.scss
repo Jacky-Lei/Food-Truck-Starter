@@ -18,6 +18,12 @@
   clear: both;
 }
 
+.foodtruck-index:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .foodtruck-item-image{
   width: 100%;
 }

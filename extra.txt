@@ -28,3 +28,26 @@ logInGuest: function (user) {
 <li><a onClick={ApiUtil.logInGuest(user)}>Guest Log In</a></li>
 
   var user = {username: tester, password: tester};
+
+
+  {/*
+                <li><a onClick={ApiUtil.logInGuest(user)}>Guest Log In</a></li> */}
+
+
+  {/*
+
+    logInGuest: function (user) {debugger
+      $.ajax({
+        url: "/session/",
+        method: "POST",
+        data: {user: {
+          username:
+          password:
+        }}
+        success: function () {
+           window.location = "/"
+        }
+      });
+    },
+
+    */}

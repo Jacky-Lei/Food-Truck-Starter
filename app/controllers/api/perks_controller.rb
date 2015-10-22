@@ -10,7 +10,7 @@ class Api::PerksController < ApplicationController
   end
 
   def index
-    @perks = Perk.all
+    @perks = Perk.includes(:foodtruck).includes(:donation).all
   end
 
   def show

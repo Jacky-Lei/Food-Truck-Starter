@@ -1,6 +1,18 @@
 window.ApiUtil = {
 
 
+  logInGuest: function (user) {debugger
+    $.ajax({
+      url: "/session/",
+      method: "POST",
+      data: {user: user},
+      success: function () {
+         window.location = "/";
+      }
+    });
+  },
+
+
   fetchAllFoodTrucks: function () {
     $.ajax({
       url: "api/foodtrucks",

@@ -22,9 +22,9 @@ window.CategoryIndex = React.createClass({
 
     return(
 
-      <div className="category-index">
+      <div className="category-index row">
         {this.state.categories.map(function (category) {
-          return <CategoryItem key={category.id} category={category} />;
+          return <CategoryItem key={category.id} category={category}/>;
         })}
       </div>
     );

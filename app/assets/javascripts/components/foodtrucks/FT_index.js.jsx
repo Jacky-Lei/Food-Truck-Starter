@@ -22,11 +22,11 @@ window.FoodtruckIndex = React.createClass({
 
     return(
 
-      <ul className="foodtruck-index">
+      <div className="foodtruck-index">
         {this.state.foodtrucks.map(function (foodtruck) {
           return <FoodtruckItem key={foodtruck.id} foodtruck={foodtruck} />;
         })}
-      </ul>
+      </div>
 
 
 

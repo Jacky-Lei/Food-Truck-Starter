@@ -1,7 +1,6 @@
 class Api::FoodtrucksController < ApplicationController
   def create
 
-
     # foodtruck_params[:author_id] = current_user.id
     # foodtruck_params[:category_id] = (Category.find_by_name(foodtruck_params[:category])).id
     # @foodtruck = Foodtruck.new(foodtruck_params)
@@ -17,11 +16,11 @@ class Api::FoodtrucksController < ApplicationController
   end
 
   def index
-    @foodtruck = Foodtruck.all
+    @foodtruck = Foodtruck.includes(:donations).includes(:perks).includes(:category).includes(:user).all
   end
 
   def show
-    @foodtruck = Foodtruck.find(params[:id])
+    @foodtruck = Foodtruck.includes(:donations).includes(:perks).includes(:category).includes(:user).find(params[:id])
   end
 
   private

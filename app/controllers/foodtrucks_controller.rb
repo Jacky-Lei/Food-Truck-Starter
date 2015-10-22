@@ -1,2 +1,0 @@
-class FoodtrucksController < ApplicationController
-end

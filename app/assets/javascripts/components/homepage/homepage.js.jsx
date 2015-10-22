@@ -3,8 +3,10 @@ window.Homepage = React.createClass({
     return(
     <div>
       <div className="homepage">
-      
-        <Filter/>
+
+        <CategoryIndex/>
+        <FoodtruckIndex/>
+
       </div>
 
       {this.props.children}

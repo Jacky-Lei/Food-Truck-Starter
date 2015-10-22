@@ -2,6 +2,14 @@ var Link = ReactRouter.Link;
 
 window.Navbar = React.createClass({
   mixins: [ReactRouter.History],
+
+
+
+  loginHandler: function () {
+    var user = {username: "tester", password: "tester"};
+    ApiUtil.logInGuest(user);
+  },
+
   render: function (){
     if (window.CURRENT_USER_ID) {
       return(
@@ -18,8 +26,6 @@ window.Navbar = React.createClass({
                 <li>
               <Link to="/"><img className="main-logo" src="http://res.cloudinary.com/akantoword/image/upload/v1445407180/Screen_Shot_2015-10-20_at_10.58.52_PM_m8g1me.png" /></Link>
 
-
-
               </li>
               </ul>
             </div>
@@ -34,7 +40,7 @@ window.Navbar = React.createClass({
 
               <ul className="nav navbar-nav navbar-right">
                 <li onClick={SessionUtil.logOut} ><a href="">Log Out</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="#">{window.CURRENT_USER_USERNAME}</a></li>
 
               </ul>
             </div>
@@ -46,8 +52,6 @@ window.Navbar = React.createClass({
 
 
     } else {
-
-
 
 
 
@@ -63,7 +67,7 @@ window.Navbar = React.createClass({
               </button>
               <ul className="nav navbar-nav">
                 <li>
-              <Link to="/">Food Truck Starter</Link>
+                  <Link to="/"><img className="main-logo" src="http://res.cloudinary.com/akantoword/image/upload/v1445407180/Screen_Shot_2015-10-20_at_10.58.52_PM_m8g1me.png" /></Link>
               </li>
               </ul>
             </div>
@@ -79,7 +83,10 @@ window.Navbar = React.createClass({
               <ul className="nav navbar-nav navbar-right">
                 <li><a href="/users/new">Sign Up</a></li>
                 <li><a href="/session/new">Log In</a></li>
-                <li><a href="#">Guest Log In</a></li>
+                <li><a onClick={this.loginHandler}>Guest Log In</a></li>
+
+
+
               </ul>
             </div>
           </div>
