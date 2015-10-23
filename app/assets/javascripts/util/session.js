@@ -6,6 +6,6 @@ window.SessionUtil = {
       success: function () {
         window.location = "/";
       }
-    })
+    });
   },
-}
+};

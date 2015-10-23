@@ -2,15 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.category-item {
-  float: left;
-  margin: 10px;
-  border: 10px;
+.select-categories-label{
+  display: inline-block;
 }
 
-.category-index {
+.category-item {
+  font-size: 40px;
+  margin: 20px;
+  padding: 2px 20px;
+  display: inline-block;
+  background-color: black;
+  color: red;
+  font-family: "SignPainter-HouseScript", serif;
+  font-weight: 900;
+  border-radius: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.category-index{
+  width: 100%;
   text-align: center;
 }
+
+.category-index:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
 
 // .sr-only {
 //     position: absolute;

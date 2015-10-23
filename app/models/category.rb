@@ -2,7 +2,9 @@ class Category < ActiveRecord::Base
   TYPES = [
     "Hispanic",
     "Asian",
-    "Western"
+    "American",
+    "Indian",
+    "European"
   ]
 
   validates :name, presence: true

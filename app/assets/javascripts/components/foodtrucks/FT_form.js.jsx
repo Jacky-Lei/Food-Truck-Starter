@@ -20,6 +20,9 @@ window.FoodtruckForm = React.createClass({
     Object.keys(this.state).forEach(function (key) {
       {foodtruck[key] = this.state[key];}
     }.bind(this));
+    if(foodtruck.image === undefined){
+      foodtruck.image = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ1Bpo5p4PYAvgnZ1dSc1IP2IAZ5ohWeXgwGs9faYAw5f_lgjd6";
+    }
 
     ApiUtil.createFoodtruck(foodtruck, function (id) {
       this.history.pushState(null, "/createfoodtruck/" + id, {});
@@ -42,63 +45,94 @@ window.FoodtruckForm = React.createClass({
 
   render: function () {
     return(
-      <form className="new-foodtruck" onSubmit={this.createFoodtruck}>
+      <form className="foodtruck-form form-horizontal" onSubmit={this.createFoodtruck}>
 
-        <div>
-          <label htmlFor='foodtruck_title'>Title:</label>
-          <input
+        <div className="form-group">
+          <label htmlFor='foodtruck_title' className="col-sm-2 control-label">Food Truck Name:</label>
+          <div className="col-sm-6">
+            <input
             type='string'
             id='foodtruck_title'
             valueLink={this.linkState("title")}
-          />
-        </div>
-
-        <div>
-          <label htmlFor='foodtruck_description'>Description:</label>
-          <input
-            type='text'
-            id='foodtruck_description'
-            valueLink={this.linkState("description")}
-          />
-        </div>
-
-        <div>
-            <label htmlFor='foodtruck_end_date'>End Date:</label>
-            <input
-              type='date'
-              id='foodtruck_end_date'
-              valueLink={this.linkState("end_date")}
+            placeholder="By what glorious word or phrase will the hungry refer to you by?"
+            className="form-control"
             />
+          </div>
+          <div className="col-sm-1"></div>
         </div>
 
-        <div>
-            <label htmlFor='foodtruck_funding_goal'>Funding Goal ($):</label>
-            <input
-              type='number'
-              min="0"
-              id='foodtruck_funding_goal'
-              valueLink={this.linkState("funding_goal")}
+        <div className="form-group">
+          <label htmlFor='foodtruck_description' className="col-sm-2 control-label">Description:</label>
+          <div className="col-sm-6">
+            <textarea
+              type='text'
+              id='foodtruck_description'
+              valueLink={this.linkState("description")}
+              placeholder="What are you about? What is this food about? What is life about???"
+              className="form-control"
             />
+          </div>
+          <div className="col-sm-1"></div>
         </div>
 
-        <div>
-          <label htmlFor='foodtruck_category'>Category:</label>
-          <select id='foodtruck_category' valueLink={this.linkState("category")} >
-            <option selected ="" >Select A Value</option>
-
-            <option value="Hispanic" >Hispanic</option>
-            <option value="Asian" >Asian</option>
-            <option value="Western" >Western</option>
-          </select>
+        <div className="form-group">
+            <label htmlFor='foodtruck_end_date' className="col-sm-2 control-label">End Date:</label>
+            <div className="col-sm-6">
+              <input
+                type='date'
+                id='foodtruck_end_date'
+                valueLink={this.linkState("end_date")}
+                className="form-control"
+              />
+            </div>
+            <div className="col-sm-1"></div>
         </div>
 
-        <div>
-          <button onClick={this._placeImage} id="pic">Picture</button>
+        <div className="form-group">
+            <label htmlFor='foodtruck_funding_goal' className="col-sm-2 control-label">Funding Goal ($):</label>
+          <div className="col-sm-6">
+            <input
+                type='number'
+                min="0"
+                id='foodtruck_funding_goal'
+                valueLink={this.linkState("funding_goal")}
+                placeholder="How much dough do you need to bake this food truck dream of yours?"
+                className="form-control"
+              />
+          </div>
+          <div className="col-sm-1"></div>
         </div>
 
-        <button>Create foodtruck</button>
+        <div className="form-group">
+          <label htmlFor='foodtruck_category' className="col-sm-2 control-label">Category:</label>
+          <div className="col-sm-6">
+            <select id='foodtruck_category' className="form-control" valueLink={this.linkState("category")} >
+              <option selected ="" >Select Your Food Truck Category</option>
+              <option value="Hispanic" >Hispanic</option>
+              <option value="Asian" >Asian</option>
+              <option value="American" >American</option>
+              <option value="Indian" >Indian</option>
+              <option value="European" >European</option>
+            </select>
+          </div>
+          <div className="col-sm-1"></div>
+        </div>
 
-        <br />
+        <div className="form-group">
+          <label htmlFor='foodtruck_image' className="col-sm-2 control-label">Image:</label>
+          <div className="col-sm-6">
+          <button onClick={this._placeImage} id="pic" className="form-control">Upload Depiction of Deliciousness</button>
+          </div>
+          <div className="col-sm-1"></div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-offset-2 col-sm-6">
+            <button className="form-control btn btn-danger">Create Food Truck!</button>
+          </div>
+          <div className="col-sm-1"></div>
+        </div>
+
 
       </form>
     );

@@ -44,7 +44,7 @@ window.FoodtruckDetail = React.createClass({
               {this.state.foodtruck.user.username}
             </div></h4>
 
-            <img className="foodtruck-detail-image" src={this.state.foodtruck.image} />
+          <img className="foodtruck-detail-image clearfix" src={this.state.foodtruck.image} />
             {['description', 'end_date', 'funding_goal'].map(function (attr) {
 
               return <div key={attr}>{attr}: {this.state.foodtruck[attr]}</div>;
@@ -58,14 +58,15 @@ window.FoodtruckDetail = React.createClass({
                   )}
                 </ol>
 
-
               <div>Category: {this.state.foodtruck.category.name}</div>
-
 
               <div><DonationBar donationSum={donationSum}/></div>
 
-
-            <div>{this.props.route.path.indexOf("createfoodtruck") === -1 ?  <DonationForm foodtruckId={this.props.params.foodtruckId}/> : <PerkFormIndex foodtruckId={this.props.params.foodtruckId}/> }</div>
+            <div>
+              {this.props.route.path.indexOf("createfoodtruck") === -1 ?
+                <DonationForm foodtruckId={this.props.params.foodtruckId}/> :
+                <Example foodtruckId={this.props.params.foodtruckId}/>}
+            </div>
 
           </div>
         </div>

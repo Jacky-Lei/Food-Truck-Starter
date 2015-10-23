@@ -25,10 +25,32 @@
 }
 
 .homepage {
-  background-color: black;
+
 }
+
+/* You could use :after - it doesn't really matter */
 
 
 .main-logo{
   width: 200px;
+}
+
+.navbar-log-out-button{
+  margin-left: 40px
+}
+
+.navbar{
+
+  background-image: url("http://3.bp.blogspot.com/-F7TKYWYeSD8/T8jLzblcx8I/AAAAAAAADXM/H4FaAv-W_TA/s1600/YellowStripedPaper.png");
+  border: #FFC800;
+  border-width: 5px;
+  border-color: #FFC800;
+  border-bottom-style: double;
+  margin: 5px;
+  border-top-style: double;
+  margin-top: 10px;
+}
+
+.navbar-profile-name{
+  margin-top: 15px;
 }

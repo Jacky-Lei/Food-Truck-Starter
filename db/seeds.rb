@@ -37,7 +37,7 @@ ActiveRecord::Base.transaction do
       "funding_goal"=>6325
     },
     {
-      "title"=>"Be My Chow Mein Man",
+      "title"=>"My Chow Mein Man",
       "description"=>"Whose needs a main man when you can have a CHOW MEIN MAN?! Nothing hits the spot like my chow mein, guaranteed. I've been stir frying up noodles and yums before it was cool.",
       "author_id"=>4,
       "end_date"=>"2015-12-18",
@@ -228,6 +228,76 @@ ActiveRecord::Base.transaction do
       "backer_id"=>11,
       "perk_id"=>16,
     },
+
+
+
+    {
+      "amount"=>200,
+      "foodtruck_id"=>1,
+      "backer_id"=>13,
+    },
+    {
+      "amount"=>500,
+      "foodtruck_id"=>2,
+      "backer_id"=>12,
+
+    },
+    {
+      "amount"=>4000,
+      "foodtruck_id"=>3,
+      "backer_id"=>11,
+
+    },
+    {
+      "amount"=>50,
+      "foodtruck_id"=>4,
+      "backer_id"=>10,
+    },
+    {
+      "amount"=>3000,
+      "foodtruck_id"=>5,
+      "backer_id"=>9,
+    },
+    {
+      "amount"=>1000,
+      "foodtruck_id"=>6,
+      "backer_id"=>8,
+
+    },
+    {
+      "amount"=>2000,
+      "foodtruck_id"=>7,
+      "backer_id"=>7,
+
+    },
+    {
+      "amount"=>3500,
+      "foodtruck_id"=>8,
+      "backer_id"=>6,
+    },
+    {
+      "amount"=>200,
+      "foodtruck_id"=>9,
+      "backer_id"=>5,
+    },
+    {
+      "amount"=>7000,
+      "foodtruck_id"=>10,
+      "backer_id"=>4,
+
+    },
+    {
+      "amount"=>5000,
+      "foodtruck_id"=>12,
+      "backer_id"=>3,
+
+    },
+    {
+      "amount"=>350,
+      "foodtruck_id"=>13,
+      "backer_id"=>1,
+    },
+
     ]
 
   perk = [

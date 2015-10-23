@@ -28,7 +28,7 @@ gem 'annotate'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
-
+gem 'react-bootstrap-rails'
 
 gem 'cloudinary'
 # Use ActiveModel has_secure_password

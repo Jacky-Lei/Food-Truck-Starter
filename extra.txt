@@ -1,53 +1,48 @@
-<div>Perks: {this.state.foodtruck.perks.map(function (perk){
-    {['name', 'description', 'amount'].map(function (attr){
-      return <div key={attr}>{attr}: {perk[attr]}</div>;
-    })}
-}.bind(this)
-)}
+window.PerkFormIndex = React.createClass({
 
-</div>
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
-<div> Perks: {for (var i = 0; i < perkArray.length; i++){
-    return <div>{"Name: " + perkArray[0].name + " Description: " + perkArray[0].description + " Amount: " + perkArray[0].amount}</div>;
-  }; }
+  blankAttrs: {
+    numPerkForms: 1,
+  },
 
-</div>
+  getInitialState: function () {
+    return this.blankAttrs;
+  },
+
+  makePerkForm: function () {
+    this.setState({numPerkForms: this.state.numPerkForms + 1});
+  },
 
 
-logInGuest: function (user) {
-  $.ajax({
-    url: "/session/",
-    method: "POST",
-    success: function () {
-      redirect
+  finishPerk: function () {
+    ApiUtil.fetchSingleFoodtruck(parseInt(this.props.foodtruckId));
+    this.history.pushState(null, 'foodtruck/' + this.props.foodtruckId, {});
+  },
+
+  render: function () {
+    var formInputs = [];
+
+    for (var i = 0; i < this.state.numPerkForms; i++) {
+      formInputs.push(
+        <PerkForm key={i} foodtruckId={this.props.foodtruckId}/>
+      );
     }
-  });
-},
 
+    return(
+      <div>
+      <div onClick={this.makePerkForm} className="perk-form-button">
+        <p>Add Another Perk</p>
+      </div>
 
-<li><a onClick={ApiUtil.logInGuest(user)}>Guest Log In</a></li>
+      <div>{formInputs}</div>
 
-  var user = {username: tester, password: tester};
+      <button onClick={this.finishPerk} className="finish-perk-form-button">
+        Finish Food Truck!
+      </button>
 
+      </div>
 
-  {/*
-                <li><a onClick={ApiUtil.logInGuest(user)}>Guest Log In</a></li> */}
-
-
-  {/*
-
-    logInGuest: function (user) {debugger
-      $.ajax({
-        url: "/session/",
-        method: "POST",
-        data: {user: {
-          username:
-          password:
-        }}
-        success: function () {
-           window.location = "/"
-        }
-      });
-    },
-
-    */}
+    );
+  }
+});

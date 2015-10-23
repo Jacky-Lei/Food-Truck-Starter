@@ -4,14 +4,92 @@
 
 .foodtruck-item{
   width: 350px;
-  height: 340px;
+  height: 455px;
   float: left;
-  border-width: 10px;
-  border-color: red;
+  border-width: 8px;
+  border-color: salmon;
   padding: 10px;
-  border-style: groove;
+  border-style: inset;
   margin: 20px;
   cursor: pointer;
+  border-radius: 10px;
+}
+
+.foodtruck-item-progress-bar{
+  font-weight: bolder;
+}
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.foodtruck-item:hover {
+	animation: bounce 1s;
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+.foodtruck-item-title{
+  font-size: 30px;
+  text-shadow: 2px 2px #CA561E;
+  font-family: "Gill Sans", serif;
+  font-weight: bolder;
+}
+
+.foodtruck-item-donation-sum{
+  margin-top: -15px;
+  font-size: 20px;
+  color: rgb(174, 193, 44);
+  font-family: "Gill Sans", serif;
+  font-weight: bolder;
+}
+
+.foodtruck-item-image-container{
+  height: 250px;
+  min-width: 314px;
+}
+
+.foodtruck-item-image{
+  vertical-align: top;
+  height: 100%;
+  width: 100%;
+}
+
+.foodtruck-item-days-left{
+  font-size: 15px;
+  font-family: "Gill Sans", serif;
+  font-weight: bolder;
+}
+
+.foodtruck-item-short-description-container{
+  height: 48px;
+}
+
+.foodtruck-item-short-description{
+  font-size: 15px;
+  font-family: "Gill Sans", serif;
+  font-weight: 900;
+  font-style: italic;
+  color: darkslategrey;
 }
 
 .foodtruck-index{
@@ -47,4 +125,20 @@
 
 .foodtruck-detail-by-username{
   font-style: italic;
+}
+
+.foodtruck-form{
+
+}
+
+.foodtruck-form:before {
+  content: "";
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url("http://previews.123rf.com/images/notkoo2008/notkoo20081112/notkoo2008111200063/11529644-seamless-fast-food-pattern--Stock-Vector.jpg");
 }

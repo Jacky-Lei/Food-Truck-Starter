@@ -18,4 +18,5 @@
 //= require flux
 //= require eventemitter
 //= require bootstrap
+//= require react_bootstrap
 //= require_tree .

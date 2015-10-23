@@ -28,10 +28,6 @@ window.FoodtruckIndex = React.createClass({
         })}
       </div>
 
-
-
-
-
     );
   }
 

@@ -1,7 +1,7 @@
 window.ApiUtil = {
 
 
-  logInGuest: function (user) {debugger
+  logInGuest: function (user) {
     $.ajax({
       url: "/session/",
       method: "POST",
