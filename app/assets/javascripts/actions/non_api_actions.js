@@ -14,4 +14,11 @@ window.NonApiActions = {
     });
   },
 
+  receivePerkAlert: function (perkKey) {
+    AppDispatcher.dispatch({
+      actionType: PerkConstants.PERK_ALERT_RECEIVED,
+      perkKey: perkKey
+    });
+  },
+
 };

@@ -65,7 +65,7 @@ window.FoodtruckDetail = React.createClass({
             <div>
               {this.props.route.path.indexOf("createfoodtruck") === -1 ?
                 <DonationForm foodtruckId={this.props.params.foodtruckId}/> :
-                <Example foodtruckId={this.props.params.foodtruckId}/>}
+                <PerkFormIndex history={this.props.history} foodtruckId={this.props.params.foodtruckId}/>}
             </div>
 
           </div>

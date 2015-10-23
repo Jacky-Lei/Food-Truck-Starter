@@ -43,7 +43,6 @@ window.ApiUtil = {
     });
   },
 
-
   createDonation: function (donation, callback) {
     $.ajax({
       url: "api/donations/",

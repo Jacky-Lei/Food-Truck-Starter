@@ -1,3 +1,4 @@
 window.PerkConstants = {
   PERK_RECEIVED: "PERK_RECEIVED",
+  PERK_ALERT_RECEIVED: "PERK_ALERT_RECEIVED",
 };
