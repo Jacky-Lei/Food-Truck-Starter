@@ -62,21 +62,27 @@ window.DonationForm = React.createClass({
         }
 
     return(
-      <div>
-      <form className="new-donation" onSubmit={this.createDonation}>
+      <div className="donation-form-title">Your Contribution
+      <form onSubmit={this.createDonation}>
 
         <div>
-          <label htmlFor='donation_amount'>Amount:</label>
+          <label htmlFor='donation_amount'></label>
           <input
+            className="donation-form-amount"
             type='number'
             min='0'
             id='donation_amount'
+            placeholder='$50 $100 $200'
             valueLink={this.linkState("amount")}
           />
+
+        <div>
+          <button className="donation-form-button">CONTRIBUTE NOW</button>
         </div>
 
-        <button>Submit Donation</button>
-        <br />
+
+
+        </div>
 
       </form>
 

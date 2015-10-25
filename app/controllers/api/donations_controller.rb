@@ -10,7 +10,7 @@ class Api::DonationsController < ApplicationController
   end
 
   def show
-    @donation = Donation.includes(:foodtruck).includes(:perks)find(params[:id])
+    @donation = Donation.includes(:foodtruck).includes(:perks).find(params[:id])
   end
 
   def donation_params
