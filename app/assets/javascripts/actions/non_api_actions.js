@@ -21,4 +21,11 @@ window.NonApiActions = {
     });
   },
 
+  receiveFoodtruckErrors: function (errors) {
+    AppDispatcher.dispatch({
+      actionType: FoodtruckConstants.FOODTRUCK_ERRORS_RECEIVED,
+      errors: errors
+    });
+  },
+
 };

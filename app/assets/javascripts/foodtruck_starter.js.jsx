@@ -12,7 +12,7 @@ $(function () {
         <Route path="/createfoodtruck" component={FoodtruckForm} />
         <Route path="/createfoodtruck/:foodtruckId" component={FoodtruckDetail} />
 
-        <Route path="/indexfoodtruck" component={FoodtruckIndex} />
+        <Route path="/indexfoodtruck" component={IndexFoodtruckPage} />
         <Route path="/foodtruck/:foodtruckId" component={FoodtruckDetail} />
       </Route>
 

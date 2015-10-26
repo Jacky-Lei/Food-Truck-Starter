@@ -21,23 +21,15 @@ window.CategoryDetail = React.createClass({
   },
 
   render: function () {
-
     if(this.state.category === null) {return <div></div>;}
-      else{
-
-
+      else {
       return(
-
         <ul className="items">
           {this.state.category.foodtrucks.map(function (foodtruck) {
             return <FoodtruckItem key={foodtruck.id} foodtruck={foodtruck} />;
           })}
         </ul>
-
-
       );
-
     };
   }
-
 });

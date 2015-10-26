@@ -19,25 +19,13 @@ window.CategoryIndex = React.createClass({
   },
 
   render: function () {
-
     return(
-
       <div className="category-index">
         <div className="select-categories-label">Categories: </div>
-
         {this.state.categories.map(function (category) {
           return <CategoryItem key={category.id} category={category}/>;
         })}
-
-
       </div>
-
-
-
-
-
     );
   }
-
-
 });

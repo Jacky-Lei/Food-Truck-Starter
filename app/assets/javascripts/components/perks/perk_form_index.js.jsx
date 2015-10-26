@@ -41,8 +41,8 @@ window.PerkFormIndex = React.createClass({
       }
 
     return (
-      <div>
-        <Button bsStyle="primary" bsSize="large" onClick={this.open}>
+      <div className="perk-form-add-perks-button">
+        <Button bsStyle="danger" bsSize="large" onClick={this.open}>
           Add Perks
         </Button>
 
@@ -60,8 +60,8 @@ window.PerkFormIndex = React.createClass({
 
             <div>
 
-              <OverlayTrigger placement="left" overlay={tooltip}>
-                <Button bsStyle="default" onClick={this.makePerkForm} className="perk-form-button">
+              <OverlayTrigger placement="left" overlay={tooltip} className="perk-form-button">
+                <Button bsStyle="info" bsSize="medium" onClick={this.makePerkForm} >
                   Add Another Perk</Button>
               </OverlayTrigger>
 
@@ -72,13 +72,13 @@ window.PerkFormIndex = React.createClass({
           </Modal.Body>
           <Modal.Footer>
 
-            <button onClick={this.finishPerk} className="perk-form-index-finish-button">
+            <Button bsStyle="success" bsSize="medium" onClick={this.finishPerk} className="perk-form-index-finish-button">
               Finish Food Truck!
-            </button>
+            </Button>
 
-            <button onClick={this.finishPerk} className="perk-form-index-no-perks-button">
+            <Button bsStyle="success" bsSize="medium" onClick={this.finishPerk} className="perk-form-index-finish-no-perks-button">
               No Perks Now, Take Me To My Food Truck!
-            </button>
+            </Button>
 
           </Modal.Footer>
         </Modal>

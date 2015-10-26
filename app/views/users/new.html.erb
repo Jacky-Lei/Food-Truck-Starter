@@ -14,9 +14,9 @@
 
 </form> -->
 
-<%= flash[:errors] %>
 
-<!--Pulling Awesome Font -->
+<%= flash[:errors] %>
+<div className="sign-up-page">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <form action="<%=users_url%>" method="post">
@@ -35,7 +35,8 @@
             </br>
             <div class="wrapper">
             <span class="group-btn">
-                <input type="submit" class="btn btn-primary btn-md"><i class="fa fa-sign-in"></i>
+                <input type="submit" class="btn btn-primary btn-md" className="sign-in-submit-button"><i class="fa fa-sign-in"></i>
+                <%= link_to 'Guest Log In', guest_path %>
             </span>
             </div>
             </div>
@@ -45,3 +46,5 @@
 </div>
 
 </form>
+
+</div>

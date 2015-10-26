@@ -52,11 +52,11 @@ window.FoodtruckItem = React.createClass({
           <div className="foodtruck-item-donation-bar progress-bar progress-bar-danger
             progress-bar-striped active" role="progressbar" aria-valuenow={{result}}
             aria-valuemin="0" aria-valuemax="100" style={{"width": resultPercentage}}>
-            {result} %
           </div>
         </div>
 
         <div className="foodtruck-item-donation-sum">${donationSumWithCommas} funded</div>
+        <div className="foodtruck-item-donation-percentage">{result}% funded</div>
 
         <div className="foodtruck-item-days-left">{diffDays} days left</div>
 

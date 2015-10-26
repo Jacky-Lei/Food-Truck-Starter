@@ -15,6 +15,15 @@
 </form>
 
 <%= flash[:errors] %> -->
+<script type="text/javascript">
+var loginHandler = function () {
+  $('#userName').val("Guest")
+  $('#Password').val("password")
+  setTimeout(function () {$('#submit-credentials').click();},0);
+
+}
+</script>
+
 
 
 <%= flash[:errors] %>
@@ -38,7 +47,8 @@
             </br>
             <div class="wrapper">
             <span class="group-btn">
-                <input type="submit" class="btn btn-primary btn-md"><i class="fa fa-sign-in"></i>
+                <input type="submit" id="submit-credentials" class="btn btn-primary btn-md"><i class="fa fa-sign-in"></i>
+                <button type="button" onclick="loginHandler()" class="btn btn-primary btn-md" className="sign-in-submit-button">Guest Login</button><i class="fa fa-sign-in"></i>
             </span>
             </div>
             </div>

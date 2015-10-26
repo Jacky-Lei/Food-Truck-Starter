@@ -25,4 +25,12 @@ class SessionsController < ApplicationController
     render json: {}
   end
 
+  def guest
+    @user = User.find_by_credentials(
+      "Guest",
+      "password"
+    )
+    login(@user)
+    redirect_to root_url
+  end
 end

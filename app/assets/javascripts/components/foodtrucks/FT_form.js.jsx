@@ -7,7 +7,8 @@ window.FoodtruckForm = React.createClass({
     description: '',
     category: '',
     end_date: '',
-    funding_goal: ''
+    funding_goal: '',
+
   },
 
   getInitialState: function () {
@@ -17,11 +18,19 @@ window.FoodtruckForm = React.createClass({
   createFoodtruck: function () {
     event.preventDefault();
     var foodtruck = {};
+    var perkFormErrorsArray = [];
     Object.keys(this.state).forEach(function (key) {
+      if(this.state[key] === ''){
+        perkFormErrorsArray.push(key);
+      }
       {foodtruck[key] = this.state[key];}
     }.bind(this));
+    if (perkFormErrorsArray.length !== 0){
+      NonApiActions.receiveFoodtruckErrors(perkFormErrorsArray);
+    }
+
     if(foodtruck.image === undefined){
-      foodtruck.image = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ1Bpo5p4PYAvgnZ1dSc1IP2IAZ5ohWeXgwGs9faYAw5f_lgjd6";
+      foodtruck.image = "http://lpautoglassorlando.com/blog/wp-content/uploads/2015/09/food-truck-pic.jpg";
     }
 
     ApiUtil.createFoodtruck(foodtruck, function (id) {
@@ -44,12 +53,17 @@ window.FoodtruckForm = React.createClass({
   },
 
   render: function () {
+
+
+
     return(
+
+      <div className="foodtruck-form-container">
       <form className="foodtruck-form form-horizontal" onSubmit={this.createFoodtruck}>
 
         <div className="form-group">
-          <label htmlFor='foodtruck_title' className="col-sm-2 control-label">Food Truck Name:</label>
-          <div className="col-sm-6">
+          <label htmlFor='foodtruck_title' className="col-sm-3 control-label foodtruck-form-label">Food Truck Name:</label>
+          <div className="col-sm-7">
             <input
             type='string'
             id='foodtruck_title'
@@ -58,12 +72,12 @@ window.FoodtruckForm = React.createClass({
             className="form-control"
             />
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-          <label htmlFor='foodtruck_description' className="col-sm-2 control-label">Description:</label>
-          <div className="col-sm-6">
+          <label htmlFor='foodtruck_description' className="col-sm-3 control-label foodtruck-form-label">Description:</label>
+          <div className="col-sm-7">
             <textarea
               type='text'
               id='foodtruck_description'
@@ -72,12 +86,12 @@ window.FoodtruckForm = React.createClass({
               className="form-control"
             />
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-            <label htmlFor='foodtruck_end_date' className="col-sm-2 control-label">End Date:</label>
-            <div className="col-sm-6">
+            <label htmlFor='foodtruck_end_date' className="col-sm-3 control-label foodtruck-form-label">End Date:</label>
+            <div className="col-sm-7">
               <input
                 type='date'
                 id='foodtruck_end_date'
@@ -85,12 +99,13 @@ window.FoodtruckForm = React.createClass({
                 className="form-control"
               />
             </div>
-            <div className="col-sm-1"></div>
+            <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-            <label htmlFor='foodtruck_funding_goal' className="col-sm-2 control-label">Funding Goal ($):</label>
-          <div className="col-sm-6">
+
+            <label htmlFor='foodtruck_funding_goal' className="col-sm-3 control-label foodtruck-form-label">Funding Goal ($):</label>
+          <div className="col-sm-7">
             <input
                 type='number'
                 min="0"
@@ -100,12 +115,12 @@ window.FoodtruckForm = React.createClass({
                 className="form-control"
               />
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-          <label htmlFor='foodtruck_category' className="col-sm-2 control-label">Category:</label>
-          <div className="col-sm-6">
+          <label htmlFor='foodtruck_category' className="col-sm-3 control-label foodtruck-form-label">Category:</label>
+          <div className="col-sm-7">
             <select id='foodtruck_category' className="form-control" valueLink={this.linkState("category")} >
               <option selected ="" >Select Your Food Truck Category</option>
               <option value="Hispanic" >Hispanic</option>
@@ -115,26 +130,30 @@ window.FoodtruckForm = React.createClass({
               <option value="European" >European</option>
             </select>
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-          <label htmlFor='foodtruck_image' className="col-sm-2 control-label">Image:</label>
-          <div className="col-sm-6">
+          <label htmlFor='foodtruck_image' className="col-sm-3 control-label foodtruck-form-label">Image:</label>
+          <div className="col-sm-7">
           <button onClick={this._placeImage} id="pic" className="form-control">Upload Depiction of Deliciousness</button>
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
         <div className="form-group">
-          <div className="col-sm-offset-2 col-sm-6">
+          <div className="col-sm-offset-3 col-sm-7">
             <button className="form-control btn btn-danger">Create Food Truck!</button>
           </div>
-          <div className="col-sm-1"></div>
+          <div className="col-sm-2"></div>
         </div>
 
 
       </form>
+
+      <div><PerkFormError/></div>
+    </div>
+
     );
   }
 });

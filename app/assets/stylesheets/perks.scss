@@ -1,3 +1,75 @@
 // Place all the styles related to the Perks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.perk-item {
+  border-radius: 5px;
+  background-color: orange;
+  cursor: pointer;
+  padding: 5px 20px;
+  color: white;
+  margin: 10px 0px
+}
+
+.perk-item-amount{
+  font-weight: bolder;
+  font-size: 15px;
+  margin-bottom: 0px
+}
+
+.perk-item-name{
+  font-size: 50px;
+  font-weight: bolder;
+  margin: -10px 0px -10px;
+  font-family: "SignPainter-HouseScript", serif;
+}
+
+.perk-item-description{
+  margin-bottom: 3px;
+}
+
+.perk-item-divider{
+  border-bottom: 1px solid white;
+}
+
+.perk-add-alert{
+  position: absolute;
+  right: 430px;
+  top: 455px;
+  height: 280px;
+  width: 400px;
+  font-size: 30px;
+  background-color: black;
+  color: red;
+  border: black;
+  font-family: "Gill Sans", serif;
+}
+
+.perk-form-add-perks-button{
+  display: inline-block;
+  margin: 0px 15px;
+}
+
+.new-perk{
+  margin-top: 15px;
+}
+
+.perk-form-button{
+  margin-bottom: 10px;
+}
+
+.perk-form-index-finish-button{
+  margin-right: 12px;
+}
+
+.perk-form-index-no-perks-button{
+  display: inline-block;
+}
+
+.perk-form-index-finish-no-perks-button{
+  display: inline-block;
+  margin-left: 13px;
+}

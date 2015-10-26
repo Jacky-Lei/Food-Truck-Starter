@@ -1,3 +1,5 @@
+var Button = ReactBootstrap.Button;
+
 window.PerkForm = React.createClass({
 
   mixins: [React.addons.LinkedStateMixin],
@@ -12,7 +14,7 @@ window.PerkForm = React.createClass({
     return this.blankAttrs;
   },
 
-  submitPerk: function (event) {debugger
+  submitPerk: function (event) {
     event.preventDefault();
     var perk = {};
     Object.keys(this.state).forEach(function (key) {
@@ -25,51 +27,43 @@ window.PerkForm = React.createClass({
   },
 
   render: function () {
-
     return(
-
-      <div>
-
-      <form className="new-perk" onSubmit={this.submitPerk}>
-
-        <div>
-          <label htmlFor='perk_name'>Perk Name:</label>
-          <input
-            type='string'
-            id='perk_name'
-            valueLink={this.linkState("name")}
-
-          />
-        </div>
-
-        <div>
-          <label htmlFor='perk_description'>Perk Description:</label>
-          <input
-            type='text'
-            id='perk_description'
-            valueLink={this.linkState("description")}
-          />
-        </div>
-
-        <div>
-            <label htmlFor='perk_amount'>Perk Amount ($):</label>
+      <div className="new-perk">
+        <form onSubmit={this.submitPerk} className="form-horizontal">
+          <div>
+            <label htmlFor='perk_name' className="col-sm-4">Perk Name:</label>
             <input
-              type='number'
-              min="0"
-              id='perk_amount'
-              valueLink={this.linkState("amount")}
+              type='string'
+              label='Perk_Name'
+              wrapperClassName="col-sm-9"
+              id='perk_name'
+              valueLink={this.linkState("name")}
             />
-        </div>
-
-        <button>Register Perk</button>
-        <br />
-      </form>
-
-      <AlertAutoDismissable alertKey={this.props.perkKey} perk={this.state}/>
-
-
-    </div>
-
+          </div>
+          <div>
+            <label htmlFor='perk_description' className="col-sm-4">Perk Description:</label>
+            <input
+              type='text'
+              id='perk_description'
+              wrapperClassName="col-sm-9"
+              valueLink={this.linkState("description")}
+            />
+          </div>
+          <div>
+              <label htmlFor='perk_amount' className="col-sm-4">Perk Amount ($):</label>
+              <input
+                type='number'
+                min="0"
+                wrapperClassName="col-sm-9"
+                id='perk_amount'
+                valueLink={this.linkState("amount")}
+              />
+          </div>
+          <Button bsStyle="primary" bsSize="medium">Register Perk</Button>
+          <br/>
+        </form>
+        <AlertAutoDismissable alertKey={this.props.perkKey} perk={this.state}/>
+      </div>
     );
   }
 });

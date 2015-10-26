@@ -1,3 +1,6 @@
+var Alert = ReactBootstrap.Alert;
+var Button = ReactBootstrap.Button;
+
 window.FoodtruckDetail = React.createClass({
   getStateFromStore: function () {
     return {foodtruck: FoodtruckStore.find(parseInt(this.props.params.foodtruckId))};
@@ -19,6 +22,11 @@ window.FoodtruckDetail = React.createClass({
 
   componentWillUnmount: function () {
     FoodtruckStore.removeFoodtruckDetailChangeListener(this._onChange);
+  },
+
+  finishFoodtruck: function () {
+    ApiUtil.fetchSingleFoodtruck(parseInt(this.props.params.foodtruckId));
+    this.props.history.pushState(null, 'foodtruck/' + this.props.foodtruckId, {});
   },
 
   render: function () {
@@ -95,9 +103,10 @@ window.FoodtruckDetail = React.createClass({
                 <div className="foodtruck-detail-donation-bar progress-bar progress-bar-danger
                   progress-bar-striped active" role="progressbar" aria-valuenow={{result}}
                   aria-valuemin="0" aria-valuemax="100" style={{"width": resultPercentage}}>
-                  {result} % funded
                 </div>
               </div>
+
+              <div className="foodtruck-detail-donation-percentage">{result}% funded</div>
 
 
 
@@ -111,7 +120,20 @@ window.FoodtruckDetail = React.createClass({
               <div>
                 {this.props.route.path.indexOf("createfoodtruck") === -1 ?
                   <DonationForm foodtruckId={this.props.params.foodtruckId}/> :
-                  <PerkFormIndex history={this.props.history} foodtruckId={this.props.params.foodtruckId}/>}
+
+                    <div>
+                    <Alert bsStyle="danger" className="perk-add-alert"> You're almost done! Simply click
+                        <strong> "Add Perks"</strong> to make some custom rewards for your supporters or
+                        <strong> "Finish Food Truck"</strong> to see your final food truck page!
+                    </Alert>
+
+                  <PerkFormIndex className="perk-form-index-holder" history={this.props.history} foodtruckId={this.props.params.foodtruckId}/>
+
+                    <Button onClick={this.finishFoodtruck} className="perk-form-index-no-perks-button"
+                      Button bsStyle="danger" bsSize="large" >
+                      Finish Food Truck
+                    </Button>
+              </div>}
               </div>
 
               <div className="foodtruck-detail-divider"></div>

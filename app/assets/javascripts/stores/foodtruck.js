@@ -1,11 +1,17 @@
 (function () {
   var FOODTRUCK_INDEX_CHANGE_EVENT = "foodtrucksIndexChange";
   var FOODTRUCK_DETAIL_CHANGE_EVENT = "foodtrucksIndexChange";
-
+  var FOODTRUCK_ERRORS_CHANGE_EVENT = "foodtrucksErrorChange";
   var _foodtrucks = [];
+
+  var _errors = [];
 
   var resetFoodtrucks = function (foodtrucks) {
     _foodtrucks = foodtrucks;
+  };
+
+  var resetErrors = function (errors) {
+    _errors = errors;
   };
 
   var resetFoodtruck = function (foodtruck) {
@@ -34,6 +40,18 @@
       return foodtruck;
     },
 
+    getErrors: function () {
+      return _errors.slice();
+    },
+
+    addFoodtruckErrorsChangeListener: function (callback) {
+      this.on(FOODTRUCK_ERRORS_CHANGE_EVENT, callback);
+    },
+
+    removeFoodtruckErrorsChangeListener: function (callback) {
+      this.removeListener(FOODTRUCK_ERRORS_CHANGE_EVENT, callback);
+    },
+
     addFoodtruckDetailChangeListener: function (callback) {
       this.on(FOODTRUCK_DETAIL_CHANGE_EVENT, callback);
     },
@@ -59,6 +77,11 @@
         case FoodtruckConstants.FOODTRUCK_RECEIVED:
           resetFoodtruck(payload.foodtruck);
           FoodtruckStore.emit(FOODTRUCK_DETAIL_CHANGE_EVENT);
+          break;
+        case FoodtruckConstants.FOODTRUCK_ERRORS_RECEIVED:
+          resetErrors(payload.errors);
+          FoodtruckStore.emit(FOODTRUCK_ERRORS_CHANGE_EVENT);
+          console.log("made emit");
           break;
 
       }

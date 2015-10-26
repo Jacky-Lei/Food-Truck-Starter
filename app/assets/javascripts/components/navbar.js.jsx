@@ -21,7 +21,8 @@ window.Navbar = React.createClass({
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <button type="button" className="navbar-toggle collapsed"
+                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span className="sr-only">Toggle navigation</span>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
@@ -29,7 +30,9 @@ window.Navbar = React.createClass({
               </button>
               <ul className="nav navbar-nav">
                 <li>
-              <Link to="/"><img className="main-logo" src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png" /></Link>
+              <Link to="/"><img className="main-logo"
+                src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png"/>
+              </Link>
 
               </li>
               </ul>
@@ -37,8 +40,8 @@ window.Navbar = React.createClass({
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><Link to="/indexfoodtruck">Explore All Food Trucks</Link></li>
-                <li><Link to="/createfoodtruck">Start a Food Truck</Link></li>
+                <li className="nav-bar-links"><Link to="/indexfoodtruck">Explore All Food Trucks</Link></li>
+                <li className="nav-bar-links"><Link to="/createfoodtruck">Start a Food Truck</Link></li>
 
               </ul>
 
@@ -71,22 +74,24 @@ window.Navbar = React.createClass({
               </button>
               <ul className="nav navbar-nav">
                 <li>
-                  <Link to="/"><img className="main-logo" src="http://res.cloudinary.com/akantoword/image/upload/v1445407180/Screen_Shot_2015-10-20_at_10.58.52_PM_m8g1me.png" /></Link>
+                  <Link to="/"><img className="main-logo"
+                    src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png"/>
+                  </Link>
               </li>
               </ul>
             </div>
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><Link to="/indexfoodtruck">Explore All Food Trucks</Link></li>
-                <li><a href="/session/new">Start A Food Truck</a></li>
+                <li className="nav-bar-links"><Link to="/indexfoodtruck">Explore All Food Trucks</Link></li>
+                <li className="nav-bar-links"><a href="/session/new">Start A Food Truck</a></li>
 
               </ul>
 
               <ul className="nav navbar-nav navbar-right">
-                <li><a href="/users/new">Sign Up</a></li>
-                <li><a href="/session/new">Log In</a></li>
-                <li><a onClick={this.loginHandler}>Guest Log In</a></li>
+                <li className="nav-bar-links"><a href="/users/new">Sign Up</a></li>
+                <li className="nav-bar-links"><a href="/session/new">Log In</a></li>
+                <li className="nav-bar-links"><a onClick={this.loginHandler}>Guest Log In</a></li>
 
 
 

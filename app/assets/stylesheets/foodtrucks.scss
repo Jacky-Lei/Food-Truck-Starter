@@ -98,6 +98,7 @@ table {
   color: rgb(174, 193, 44);
   font-family: "Gill Sans", serif;
   font-weight: bolder;
+	display: inline-block;
 }
 
 .foodtruck-item-image-container{
@@ -278,48 +279,47 @@ table {
   right: 0;
   position: absolute;
   z-index: -1;
-  background-image: url("https://d13yacurqjgara.cloudfront.net/users/76620/screenshots/1909179/foodpattern-drbl800.gif");
+  background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/50/507/507385/hand-drawn-fast-food-pattern-o.jpg?1443466343");
 }
 
-.perk-item {
+.sign-up-page{
+  content: "";
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/50/507/507385/hand-drawn-fast-food-pattern-o.jpg?1443466343");
+}
+
+.foodtruck-form-container {
+  background-color: rgba(234, 137, 14, 0.82);
   border-radius: 5px;
-  background-color: orange;
-  cursor: pointer;
-  padding: 5px 20px;
+  margin: auto;
+  width: 70%;
+  margin-top: 10px;
   color: white;
-  margin: 10px 0px
+	padding: 10px 0px;
 }
-
-.perk-item-amount{
-  font-weight: bolder;
-  font-size: 15px;
-  margin-bottom: 0px
-}
-
-.perk-item-name{
-  font-size: 50px;
-  font-weight: bolder;
-  margin: -10px 0px -15px;
-  font-family: "SignPainter-HouseScript", serif;
-}
-
-.perk-item-description{
-  margin-bottom: 3px;
-}
-
-.perk-item-divider{
-  border-bottom: 1px solid white;
-}
-
-
-
-
-
 
 .foodtruck-detail-perk-index{
 
 }
 
-.foodtruck-form{
+.foodtruck-detail-donation-percentage{
+	margin-top: -10px;
+
+}
+
+.foodtruck-item-donation-percentage{
+	display: inline-block;
+	margin-left: 65px;
+	margin-top: -10px;
+}
+
+.foodtruck-form-label{
+	text-shadow: 2px 2px orangered;
 
 }
