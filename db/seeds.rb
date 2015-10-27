@@ -159,7 +159,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>20,
       "foodtruck_id"=>2,
-      "backer_id"=>1,
+      "backer_id"=>6,
     },
     {
       "amount"=>50,
@@ -210,7 +210,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>200,
       "foodtruck_id"=>9,
-      "backer_id"=>1,
+      "backer_id"=>7,
       "perk_id"=>11,
     },
     {
@@ -254,7 +254,7 @@ ActiveRecord::Base.transaction do
 
     },
     {
-      "amount"=>4000,
+      "amount"=>3500,
       "foodtruck_id"=>3,
       "backer_id"=>11,
 
@@ -306,7 +306,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>350,
       "foodtruck_id"=>13,
-      "backer_id"=>1,
+      "backer_id"=>8,
     },
 
     ]
@@ -352,7 +352,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>2,
       "foodtruck_id"=>2,
-      "backer_id"=>1,
+      "backer_id"=>11,
     },
     {
       "amount"=>2,
@@ -466,7 +466,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>5,
       "foodtruck_id"=>4,
-      "backer_id"=>1,
+      "backer_id"=>11,
     },
 
     {
@@ -494,7 +494,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>575,
       "foodtruck_id"=>6,
-      "backer_id"=>1,
+      "backer_id"=>10,
     },
     {
       "amount"=>575,
@@ -528,7 +528,7 @@ ActiveRecord::Base.transaction do
     {
       "amount"=>50,
       "foodtruck_id"=>8,
-      "backer_id"=>1,
+      "backer_id"=>11,
       "perk_id"=>10,
     },
     {
@@ -549,21 +549,10 @@ ActiveRecord::Base.transaction do
       "backer_id"=>4,
 
     },
-
-
-
-
-
-
-
-
-
-
-
     {
       "amount"=>200,
       "foodtruck_id"=>9,
-      "backer_id"=>1,
+      "backer_id"=>5,
       "perk_id"=>11,
     },
     {
@@ -645,21 +634,33 @@ ActiveRecord::Base.transaction do
       "backer_id"=>5,
     },
     {
-      "amount"=>7000,
+      "amount"=>70,
       "foodtruck_id"=>10,
       "backer_id"=>4,
 
     },
     {
-      "amount"=>5000,
+      "amount"=>50,
       "foodtruck_id"=>12,
       "backer_id"=>3,
 
     },
     {
-      "amount"=>350,
+      "amount"=>50,
+      "foodtruck_id"=>12,
+      "backer_id"=>4,
+
+    },
+    {
+      "amount"=>50,
+      "foodtruck_id"=>12,
+      "backer_id"=>5,
+
+    },
+    {
+      "amount"=>30,
       "foodtruck_id"=>13,
-      "backer_id"=>1,
+      "backer_id"=>2,
     },
 
     ]

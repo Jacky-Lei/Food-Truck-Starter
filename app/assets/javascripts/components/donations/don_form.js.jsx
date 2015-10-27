@@ -70,7 +70,7 @@ window.DonationForm = React.createClass({
           <input
             className="donation-form-amount"
             type='number'
-            min='0'
+            min='1'
             id='donation_amount'
             placeholder='$50 $100 $200'
             valueLink={this.linkState("amount")}
