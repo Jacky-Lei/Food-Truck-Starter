@@ -26,15 +26,24 @@
 
 }
 
+.navbar{
+  position: relative;
+}
+
 /* You could use :after - it doesn't really matter */
 
+
+.dropdown{
+
+  color: black;
+}
 
 .main-logo{
   width: 200px;
   margin-top: -20px;
 }
 
-.navbar-log-out-button{
+.znavbar-log-out-button{
   margin-left: 40px
 }
 
@@ -51,19 +60,38 @@
 }
 
 .navbar-nav {
-  margin-top: -25px;
+
 }
 
 .navbar-profile-name{
+  background: white;
+  color: black;
+
+}
+
+.navbar-header {
+  margin-top: -50px;
+}
+
+.navbar-toggle{
+  margin-top: 50px;
+}
+
+.znavbar-profile-name{
   margin-top: 15px;
 }
 
 .nav-bar-links {
+  background-color:white;
+  border-radius: 2px;
+  margin: 0px 5px;
   cursor: pointer;
   color: black;
-  text-decoration: underline;
-  font-weight: 900;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFA800;
 
+  font-weight: 900;
 }
 
 .sign-up-page{

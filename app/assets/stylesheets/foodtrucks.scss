@@ -279,29 +279,34 @@ table {
   right: 0;
   position: absolute;
   z-index: -1;
+	top: 0;
+	left: 0;
   background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/50/507/507385/hand-drawn-fast-food-pattern-o.jpg?1443466343");
 }
 
-.sign-up-page{
-  content: "";
-  opacity: 0.4;
+
+
+#sign-log-in-background {
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/50/507/507385/hand-drawn-fast-food-pattern-o.jpg?1443466343");
-}
 
-.foodtruck-form-container {
-  background-color: rgba(234, 137, 14, 0.82);
-  border-radius: 5px;
-  margin: auto;
-  width: 70%;
-  margin-top: 10px;
-  color: white;
-	padding: 10px 0px;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+//
+// .foodtruck-form-container {
+//   background-color: rgba(234, 137, 14, 0.82);
+//   border-radius: 5px;
+//   margin: auto;
+//   width: 70%;
+//   margin-top: 10px;
+//   color: white;
+// 	padding: 10px 0px;
+// }
+
+.container{
 }
 
 .foodtruck-detail-perk-index{
@@ -320,6 +325,71 @@ table {
 }
 
 .foodtruck-form-label{
-	text-shadow: 2px 2px orangered;
+	text-shadow: 1px 1px orangered;
+	font-size: 20px;
 
+}
+
+#foodtruck_title{
+	border-color: #482E2E;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#foodtruck_description{
+	border-color: #482E2E;
+	border-style: solid;
+	border-width: 2px;
+}
+#foodtruck_end_date{
+	border-color: #482E2E;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#foodtruck_funding_goal{
+	border-color: #482E2E;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#foodtruck_category{
+	border-color: #482E2E;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#foodtruck_image{
+	border-color: #FFDD07;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.sign-log-guest-button{
+	margin: 5px 0px 5px 5px;
+}
+
+.sign-in-guest{
+	color: white;
+}
+
+.sign-log-title{
+	font-size: 30px;
+  text-shadow: 2px 2px #CA561E;
+  font-family: "Gill Sans", serif;
+  font-weight: bolder;
+}
+
+.sign-log-creds{
+  font-size: 40px;
+  color: red;
+  font-family: "SignPainter-HouseScript", serif;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.form-login{
+	background: rgba(204, 204, 204, 0.68);
+	width: 300px;
+	margin-top: 15px;
 }

@@ -14,36 +14,38 @@
 
 </form> -->
 
+<img src="http://www.uwishunu.com/wp-content/uploads/2015/04/night-market-philadelphia-food-truck1-1200vp.jpg")" id="sign-log-in-background" alt="">
+
 
 <%= flash[:errors] %>
-<div className="sign-up-page">
+
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+<div>
 <form action="<%=users_url%>" method="post">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
 
-<div class="container">
+
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
             <div class="form-login">
-            <h4>Sign Up</h4>
-            <label for="Username">Username</label>
-            <input type="text" id="userName" name="user[username]" class="form-control input-sm chat-input" placeholder="username" value="" />
+            <h4 class="sign-log-title">Sign Up</h4>
+            <label for="Username" class="sign-log-creds">Username</label>
+            <input type="text" id="userName" name="user[username]" class="form-control input-sm chat-input" placeholder="Get Recognized" value="" />
             </br>
-            <label for="Password">Password</label>
-            <input type="password" name="user[password]" id="Password" value="" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            <label for="Password" class="sign-log-creds">Password</label>
+            <input type="password" name="user[password]" id="Password" value="" id="userPassword" class="form-control input-sm chat-input" placeholder="Secret Recipe To Success" />
             </br>
             <div class="wrapper">
             <span class="group-btn">
-                <input type="submit" class="btn btn-primary btn-md" className="sign-in-submit-button"><i class="fa fa-sign-in"></i>
-                <%= link_to 'Guest Log In', guest_path %>
+                <input type="submit" class="btn btn-primary btn-md sign-log-guest-button" className="sign-in-submit-button">
+                <%= link_to 'or Log In as Guest', guest_path %>
             </span>
             </div>
             </div>
 
         </div>
     </div>
-</div>
 
 </form>
 

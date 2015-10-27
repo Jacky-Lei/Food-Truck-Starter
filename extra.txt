@@ -46,3 +46,174 @@ window.PerkFormIndex = React.createClass({
     );
   }
 });
+
+json.extract! category, :name, :id
+json.foodtrucks do
+  json.array!(category.foodtrucks) do |foodtruck|
+    json.partial!('api/foodtrucks/foodtruck', foodtruck: foodtruck)
+  end
+end
+
+<nav className="navbar navbar-default">
+  <div className="container-fluid">
+
+
+
+    <div className="navbar-header">
+      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span className="sr-only">Toggle navigation</span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+      </button>
+      <a className="navbar-brand nav navbar-nav" href="#">
+        <Link to="/"><img className="main-logo"
+          src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png"/>
+        </Link>
+      </a>
+    </div>
+
+
+
+    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul className="nav navbar-nav">
+        <li className="nav-bar-links"><a onClick={this.exploreHandler}>Explore All Food Trucks</a></li>
+        <li className="nav-bar-links"><Link to="/createfoodtruck">Start a Food Truck</Link></li>
+      </ul>
+
+      <ul className="nav navbar-nav navbar-right">
+
+        <div className="navbar-profile-name">Logged In As: {window.CURRENT_USER_USERNAME}</div>
+          <Button onClick={this.signout} className="navbar-log-out-button">
+          <Glyphicon glyph="log-out" /> Log Out
+          </Button>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav className="navbar navbar-default">
+  <div className="container-fluid">
+
+
+
+    <div className="navbar-header">
+      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span className="sr-only">Toggle navigation</span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+      </button>
+      <a className="navbar-brand" href="#">Brand</a>
+    </div>
+
+
+
+
+    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul className="nav navbar-nav">
+        <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li className="dropdown">
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+          <ul className="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" className="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" className="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul className="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li className="dropdown">
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+          <ul className="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" className="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<nav className="navbar navbar-default">
+  <div className="container-fluid">
+    <div className="navbar-header">
+      <button type="button" className="navbar-toggle collapsed"
+        data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span className="sr-only">Toggle navigation</span>
+        <span className="icon-bar">hi</span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul className="nav navbar-nav">
+           <li class="active"><a href="#">  <Link to="/"><img className="main-logo"
+               src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png"/>
+             </Link> <span class="sr-only">(current)</span></a>
+           </li>
+           <li className="nav-bar-links"><Link to="/">Explore All Food Trucks</Link></li>
+           <li className="nav-bar-links"><Link to="/createfoodtruck">Start a Food Truck</Link></li>
+      </ul>
+    </div>
+
+
+    <ul className="nav navbar-nav navbar-right">
+
+        <div className="navbar-profile-name">Logged In As: {window.CURRENT_USER_USERNAME}</div>
+          <Button onClick={this.signout} className="navbar-log-out-button">
+          <Glyphicon glyph="log-out" /> Log Out
+          </Button>
+      </ul>
+
+  </div>
+</nav>
+
+);
+
+<nav className="navbar navbar-default">
+  <div className="container-fluid">
+    <div className="navbar-header">
+
+      <ul className="nav navbar-nav">
+        <li>
+          <Link to="/"><img className="main-logo"
+            src="http://res.cloudinary.com/akantoword/image/upload/v1445582305/JACKY_LOGO1_oevcit.png"/>
+          </Link>
+      </li>
+      </ul>
+    </div>
+
+    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul className="nav navbar-nav">
+        <li className="nav-bar-links"><a onClick={this.exploreHandler}>Explore All Food Truck</a></li>
+        <li className="nav-bar-links"><a href="/session/new">Start A Food Truck</a></li>
+
+      </ul>
+
+      <ul className="nav navbar-nav navbar-right">
+        <li className="nav-bar-links"><a href="/users/new">Sign Up</a></li>
+        <li className="nav-bar-links"><a href="/session/new">Log In</a></li>
+        <li className="nav-bar-links"><a onClick={this.loginHandler}>Guest Log In</a></li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>

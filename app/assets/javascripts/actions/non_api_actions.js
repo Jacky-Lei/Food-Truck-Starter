@@ -1,9 +1,16 @@
 window.NonApiActions = {
 
-  receiveFilteredFoodtrucks: function (foodtrucks) {
+  receiveAllFoodtrucks: function (foodtrucks) {
     AppDispatcher.dispatch({
       actionType: FoodtruckConstants.FOODTRUCKS_RECEIVED,
       foodtrucks: foodtrucks
+    });
+  },
+
+  receiveCategoryId: function (categoryId) {
+    AppDispatcher.dispatch({
+      actionType: FoodtruckConstants.CATEGORY_ID_RECEIVED,
+      categoryId: categoryId
     });
   },
 

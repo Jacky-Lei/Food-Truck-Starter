@@ -136,7 +136,7 @@ window.FoodtruckForm = React.createClass({
         <div className="form-group">
           <label htmlFor='foodtruck_image' className="col-sm-3 control-label foodtruck-form-label">Image:</label>
           <div className="col-sm-7">
-          <button onClick={this._placeImage} id="pic" className="form-control">Upload Depiction of Deliciousness</button>
+          <button onClick={this._placeImage} id="foodtruck_image" className="form-control">Upload Depiction of Deliciousness</button>
           </div>
           <div className="col-sm-2"></div>
         </div>

@@ -1,6 +1,7 @@
 window.CategoryItem = React.createClass({
   showFoodtruckIndex: function () {
-      NonApiActions.receiveFilteredFoodtrucks(this.props.category.foodtrucks);
+
+      NonApiActions.receiveCategoryId(this.props.category.id);
   },
 
   render: function () {

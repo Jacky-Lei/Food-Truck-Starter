@@ -7,15 +7,21 @@ window.FoodtruckIndex = React.createClass({
     this.setState({ foodtrucks: FoodtruckStore.all() });
   },
 
+  _onCategoryChange: function () {
+    this.setState({ foodtrucks: FoodtruckStore.getFilteredFoodtrucks() });
+  },
+
   componentDidMount: function () {
     FoodtruckStore.addFoodtruckIndexChangeListener(this._onChange);
     FoodtruckStore.addFoodtruckDetailChangeListener(this._onChange);
+    FoodtruckStore.addFoodtruckCategoryChangeListener(this._onCategoryChange);
     ApiUtil.fetchAllFoodTrucks();
   },
 
   componentWillUnmount: function () {
     FoodtruckStore.removeFoodtruckIndexChangeListener(this._onChange);
     FoodtruckStore.removeFoodtruckDetailChangeListener(this._onChange);
+    FoodtruckStore.removeFoodtruckCategoryChangeListener(this._onCategoryChange);
   },
 
   render: function () {
