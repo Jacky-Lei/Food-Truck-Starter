@@ -93,6 +93,7 @@ table {
 }
 
 .foodtruck-item-donation-sum{
+	margin-right: 5px;
   margin-top: -15px;
   font-size: 20px;
   color: rgb(174, 193, 44);
@@ -116,6 +117,7 @@ table {
   font-size: 15px;
   font-family: "Gill Sans", serif;
   font-weight: bolder;
+	display: inline-block;
 }
 
 .foodtruck-item-short-description-container{
@@ -320,8 +322,8 @@ table {
 
 .foodtruck-item-donation-percentage{
 	display: inline-block;
-	margin-left: 65px;
 	margin-top: -10px;
+	margin-right: 5px;
 }
 
 .foodtruck-form-label{

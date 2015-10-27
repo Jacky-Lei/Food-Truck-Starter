@@ -17,6 +17,10 @@ window.FoodtruckForm = React.createClass({
 
   createFoodtruck: function () {
     event.preventDefault();
+
+    if (!window.CURRENT_USER_ID)
+      {window.location="/users/new"};
+
     var foodtruck = {};
     var perkFormErrorsArray = [];
     Object.keys(this.state).forEach(function (key) {
@@ -52,7 +56,16 @@ window.FoodtruckForm = React.createClass({
        }.bind(this),false);
   },
 
+
+
   render: function () {
+    if (!window.CURRENT_USER_ID){
+      var createFoodTruckButtonText = "Sign Up to Create Food Truck!";
+      var errorComponent = <div></div>;
+    } else {
+      var createFoodTruckButtonText = "Create Food Truck!";
+      var errorComponent = <div><PerkFormError/></div>;
+    }
 
     var today = new Date().toISOString().split('T')[0];
 
@@ -144,7 +157,7 @@ window.FoodtruckForm = React.createClass({
 
         <div className="form-group">
           <div className="col-sm-offset-3 col-sm-7">
-            <button className="form-control btn btn-danger">Create Food Truck!</button>
+            <button className="form-control btn btn-danger">{createFoodTruckButtonText}</button>
           </div>
           <div className="col-sm-2"></div>
         </div>
@@ -152,7 +165,7 @@ window.FoodtruckForm = React.createClass({
 
       </form>
 
-      <div><PerkFormError/></div>
+      {errorComponent}
     </div>
 
     );
