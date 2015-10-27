@@ -19,8 +19,10 @@ window.Navbar = React.createClass({
   window.SessionUtil.logOut();
 },
 
-  exploreHandler: function () {debugger
-    NonApiActions.receiveAllFoodtrucks(FoodtruckStore.all());
+  exploreHandler: function () {
+    ApiUtil.fetchAllFoodTrucks();
+    if(window.location.hash.indexOf("foodtruck") !== -1)
+    {window.location = "/";}
   },
 
   render: function (){

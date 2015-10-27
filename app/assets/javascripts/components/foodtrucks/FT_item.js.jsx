@@ -32,13 +32,21 @@ window.FoodtruckItem = React.createClass({
         var shortDescription = originalDescription;
       }
 
+      if(this.props.foodtruck.title.length > 18){
+        var foodtruckItemTitle = this.props.foodtruck.title.slice(0,16) + "...";
+      } else {
+        var foodtruckItemTitle = this.props.foodtruck.title;
+      }
+
+
+
 
  var donationSumWithCommas = commaSeparateNumber(donationSum);
 
     return(
       <div onClick={this.showDetail} className="foodtruck-item">
 
-        <div className="foodtruck-item-title">{this.props.foodtruck.title}</div>
+        <div className="foodtruck-item-title">{foodtruckItemTitle}</div>
 
         <div className="foodtruck-item-image-container">
           <img src={this.props.foodtruck.image} className="foodtruck-item-image" />

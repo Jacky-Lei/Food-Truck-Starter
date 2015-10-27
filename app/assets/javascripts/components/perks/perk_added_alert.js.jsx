@@ -27,7 +27,7 @@ window.AlertAutoDismissable = React.createClass({
   render() {
 
     if (this.state.alertVisible && this.state.alertKey === PerkStore.getPerkKey()) {
-      if((this.props.perk.name !== "") && (this.props.perk.description!== "") && (this.props.perk.description!== "")){
+      if((this.props.perk.name !== "") && (this.props.perk.description!== "") && (this.props.perk.amount!== "")){
         var perkRegistered = true;
       }
       return (

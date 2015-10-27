@@ -45,7 +45,7 @@ window.FoodtruckForm = React.createClass({
        function(error, result) {
          if (result){
 
-           $(pic).text = "Upload Good";
+           $(foodtruck_image).text = "Upload Good";
            this.state.image = result[0].url;
          }
          console.log(error, result);
@@ -54,7 +54,7 @@ window.FoodtruckForm = React.createClass({
 
   render: function () {
 
-
+    var today = new Date().toISOString().split('T')[0];
 
     return(
 
@@ -95,6 +95,7 @@ window.FoodtruckForm = React.createClass({
               <input
                 type='date'
                 id='foodtruck_end_date'
+                min={today}
                 valueLink={this.linkState("end_date")}
                 className="form-control"
               />
@@ -108,7 +109,7 @@ window.FoodtruckForm = React.createClass({
           <div className="col-sm-7">
             <input
                 type='number'
-                min="0"
+                min="1"
                 id='foodtruck_funding_goal'
                 valueLink={this.linkState("funding_goal")}
                 placeholder="How much dough do you need to bake this food truck dream of yours?"

@@ -23,12 +23,13 @@
 .perk-item-name{
   font-size: 50px;
   font-weight: bolder;
-  margin: -10px 0px -10px;
+  margin: -10px 0px -20px;
   font-family: "SignPainter-HouseScript", serif;
 }
 
 .perk-item-description{
   margin-bottom: 3px;
+  margin-top: 10px;
 }
 
 .perk-item-divider{
@@ -36,16 +37,21 @@
 }
 
 .perk-add-alert{
-  position: absolute;
-  right: 430px;
-  top: 455px;
-  height: 280px;
-  width: 400px;
+  position: fixed;
+  right: 10%;
+  left: 10%;
+  top: 40%;
+;
   font-size: 30px;
   background-color: black;
   color: red;
   border: black;
   font-family: "Gill Sans", serif;
+}
+
+.perk-confirmation-item{
+  color: red;
+  font-weight: bold;
 }
 
 .perk-form-add-perks-button{

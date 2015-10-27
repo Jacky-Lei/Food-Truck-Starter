@@ -59,7 +59,13 @@ window.PerkForm = React.createClass({
                 valueLink={this.linkState("amount")}
               />
           </div>
-          <Button bsStyle="primary" bsSize="medium">Register Perk</Button>
+
+          <div>
+            <button className="btn btn-primary">Register Perk!</button>
+          </div>
+
+
+
           <br/>
         </form>
         <AlertAutoDismissable alertKey={this.props.perkKey} perk={this.state}/>

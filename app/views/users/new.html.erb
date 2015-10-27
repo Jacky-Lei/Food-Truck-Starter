@@ -17,7 +17,7 @@
 <img src="http://www.uwishunu.com/wp-content/uploads/2015/04/night-market-philadelphia-food-truck1-1200vp.jpg")" id="sign-log-in-background" alt="">
 
 
-<%= flash[:errors] %>
+
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -38,9 +38,16 @@
             </br>
             <div class="wrapper">
             <span class="group-btn">
-                <input type="submit" class="btn btn-primary btn-md sign-log-guest-button" className="sign-in-submit-button">
+                <input type="submit" class="btn btn-success btn-md sign-log-guest-button" className="sign-in-submit-button">
                 <%= link_to 'or Log In as Guest', guest_path %>
             </span>
+            <ul>
+              <%  if flash[:errors] %>
+              <li class="errors">-<%= flash[:errors][0] %><li>
+              <li class="errors">-<%= flash[:errors][1] %><li>
+                <% end %>
+            </ul>
+
             </div>
             </div>
 

@@ -24,9 +24,9 @@ window.FoodtruckDetail = React.createClass({
     FoodtruckStore.removeFoodtruckDetailChangeListener(this._onChange);
   },
 
-  finishFoodtruck: function () {
+  finishFoodtruck: function () {debugger
     ApiUtil.fetchSingleFoodtruck(parseInt(this.props.params.foodtruckId));
-    this.props.history.pushState(null, 'foodtruck/' + this.props.foodtruckId, {});
+    this.props.history.pushState(null, 'foodtruck/' + this.props.params.foodtruckId, {});
   },
 
   render: function () {
@@ -71,6 +71,12 @@ window.FoodtruckDetail = React.createClass({
               val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
             }
             return val;
+          }
+
+          if(this.state.foodtruck.perks.length !==0){
+            var selectAPerk = "Select a Perk";
+          } else {
+            var selectAPerk = "";
           }
 
       return(
@@ -138,7 +144,7 @@ window.FoodtruckDetail = React.createClass({
 
               <div className="foodtruck-detail-divider"></div>
 
-              <ol className="foodtruck-detail-perk-index">Select a Perk {this.state.foodtruck.perks.map(function (perk){
+              <ol className="foodtruck-detail-perk-index">{selectAPerk} {this.state.foodtruck.perks.map(function (perk){
                   return <PerkItem key={perk.id} perk={perk} donations={foodTruckDonations} />;
                   }
                 )}

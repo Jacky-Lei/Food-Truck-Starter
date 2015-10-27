@@ -105,7 +105,7 @@ window.DonationForm = React.createClass({
           />
         </div>
 
-        <button>Sign Up to Donate!</button>
+        <button className="donation-form-button">Sign Up to Contribute!</button>
         <br />
 
       </form>

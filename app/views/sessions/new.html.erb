@@ -52,10 +52,14 @@ var loginHandler = function () {
             </br>
             <div class="wrapper">
             <span class="group-btn">
-                <input type="submit" id="submit-credentials" class="btn btn-primary btn-md"><i class="fa fa-sign-in"></i>
-                <button type="button" onclick="loginHandler()" class="btn btn-primary btn-md" className="sign-in-submit-button">Guest Login</button><i class="fa fa-sign-in"></i>
+                <input type="submit" id="submit-credentials" class="btn btn-success btn-md"><i class="fa fa-sign-in"></i>
+                <button type="button" onclick="loginHandler()" class="btn btn-success btn-md" className="sign-in-submit-button">Guest Login</button><i class="fa fa-sign-in"></i>
             </span>
-            <div class="Errors"> <%= flash[:errors] %> <div>
+            <ul>
+              <%  if flash[:errors] %>
+              <li class="errors">-<%= flash[:errors][0] %><li>
+                <% end %>
+            </ul>
             </div>
             </div>
 
