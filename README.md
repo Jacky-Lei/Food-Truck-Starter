@@ -20,7 +20,7 @@ Food Truck Starter is a web application inspired by KickStarter for food truck e
 
 
 ![showScreenshot]
-(https://res.cloudinary.com/akantoword/image/upload/t_media_lib_thumb/v1447183774/FTshow_cmku6p.png)
+(http://res.cloudinary.com/akantoword/image/upload/v1447184132/FTshow_vdjybq.png)
 
 ![createScreenshot]
-(https://res.cloudinary.com/akantoword/image/upload/t_media_lib_thumb/v1447183767/FTcreate_xduw87.png)
+(http://res.cloudinary.com/akantoword/image/upload/v1447183767/FTcreate_xduw87.png)
