@@ -2,7 +2,7 @@
 
 [Application Link][link] www.foodtruckstarter.space
 
-[link]: http://jacky-lei.github.io/Coffee-Snake/
+[link]: http://www.foodtruckstarter.space
 
 ## Overview
 
