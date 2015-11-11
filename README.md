@@ -1,6 +1,6 @@
 # Food Truck Starter
 
-[Application Link][link] - www.foodtruckstarter.space
+[Application Link][link] www.foodtruckstarter.space
 
 [link]: foodtruckstarter.space
 
