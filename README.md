@@ -2,7 +2,7 @@
 
 [Application Link][link] www.foodtruckstarter.space
 
-[link]: foodtruckstarter.space
+[link]: www.foodtruckstarter.space
 
 ## Overview
 
