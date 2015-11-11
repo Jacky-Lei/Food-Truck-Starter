@@ -18,11 +18,20 @@ window.FoodtruckItem = React.createClass({
       var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
       function commaSeparateNumber(val){
-        while (/(\d+)(\d{3})/.test(val.toString())){
-          val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
-        }
-        return val;
-      }
+        var digits = String(val).split("");
+          var result = [];
+          var commaIdx = ((digits.length % 3) - 1);
+          for ( var i = 0; i < digits.length; i++) {
+            if ((i === commaIdx) && (i !== digits.length-1)) {
+            result.push(digits[i] + ",");
+              commaIdx += 3;
+          } else {
+            result.push(digits[i]);
+          }
+
+          }
+          return result.join("");
+          }
 
       var originalDescription = this.props.foodtruck.description;
 
@@ -37,9 +46,6 @@ window.FoodtruckItem = React.createClass({
       } else {
         var foodtruckItemTitle = this.props.foodtruck.title;
       }
-
-
-
 
  var donationSumWithCommas = commaSeparateNumber(donationSum);
 
@@ -67,8 +73,6 @@ window.FoodtruckItem = React.createClass({
         <div className="foodtruck-item-donation-percentage">{result}% funded</div>
 
         <div className="foodtruck-item-days-left">{diffDays} days left</div>
-
-
 
       </div>
 

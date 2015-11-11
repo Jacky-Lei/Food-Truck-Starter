@@ -12,7 +12,6 @@ window.PerkItem = React.createClass({
        this.setState({togglePerk: false});}.bind(this), 2000)
   },
 
-
   render: function () {
 
     if(this.state.togglePerk === false){
@@ -39,9 +38,6 @@ window.PerkItem = React.createClass({
         <div className="perk-item-backers">{numBackers} claimed</div>
         <div> {renderPerkDonationConfirmation}</div>
       </li>
-
-
-
 
     );
   }

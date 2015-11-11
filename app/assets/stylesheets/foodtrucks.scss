@@ -62,8 +62,6 @@ table {
   font-weight: bolder;
 }
 
-
-
 .foodtruck-item:hover {
 	animation: bounce 1s;
 }
@@ -145,12 +143,6 @@ table {
 .foodtruck-item-image{
   width: 100%;
 }
-
-
-
-
-
-
 
 .clearfix:after {
    content: " ";
@@ -250,8 +242,6 @@ table {
   width: 100%;
 }
 
-
-
 .foodtruck-detail-days{
   font-size: 45px;
   font-family: "Gill Sans", serif;
@@ -271,7 +261,6 @@ table {
   padding: 0px;
 }
 
-
 .foodtruck-form:before {
   content: "";
   opacity: 0.4;
@@ -286,38 +275,17 @@ table {
   background-image: url("https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/50/507/507385/hand-drawn-fast-food-pattern-o.jpg?1443466343");
 }
 
-
-
 #sign-log-in-background {
   position: fixed;
   top: 0;
   left: 0;
-
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
 }
-//
-// .foodtruck-form-container {
-//   background-color: rgba(234, 137, 14, 0.82);
-//   border-radius: 5px;
-//   margin: auto;
-//   width: 70%;
-//   margin-top: 10px;
-//   color: white;
-// 	padding: 10px 0px;
-// }
-
-.container{
-}
-
-.foodtruck-detail-perk-index{
-
-}
 
 .foodtruck-detail-donation-percentage{
 	margin-top: -10px;
-
 }
 
 .foodtruck-item-donation-percentage{
@@ -329,7 +297,6 @@ table {
 .foodtruck-form-label{
 	text-shadow: 1px 1px orangered;
 	font-size: 20px;
-
 }
 
 #foodtruck_title{

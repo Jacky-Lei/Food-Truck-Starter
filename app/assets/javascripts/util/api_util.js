@@ -1,6 +1,5 @@
 window.ApiUtil = {
 
-
   logInGuest: function (user) {
     $.ajax({
       url: "/session/",
@@ -11,7 +10,6 @@ window.ApiUtil = {
       }
     });
   },
-
 
   fetchAllFoodTrucks: function () {
     $.ajax({

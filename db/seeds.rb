@@ -55,7 +55,7 @@ ActiveRecord::Base.transaction do
       Peggi Ince-Whiting has been making sushi in Utah for over 30 years.  She is one of a handful of female chefs to work behind a sushi bar in Japan.  Peggi was trained by Sushi Master Inou at Hama Sushi in Tokyo.  After finishing her apprenticeship under Master Inou, Peggi returned to her native Utah to open her own restaurant, Ichiban Sushi.  Over the 20 years that Peggi owned and operated Ichiban she received many awards and acknowledgements for her talent from US publications such as Bon Appetite Magazine, Fine Cooking Magazine and Zagats.  She has also received notations in numerous Japanese publications.",
       "author_id"=>5,
       "end_date"=>"2016-1-2",
-      "image"=>"http://www.singosushi.com/wp-content/uploads/2013/12/Image00002-2000x925.jpg",
+      "image"=>"http://www.translate.com/blog/wp-content/uploads/2014/04/sushi-in-japan.jpeg",
       "category_id"=>2,
       "funding_goal"=>15000
     },

@@ -42,7 +42,6 @@ window.DonationForm = React.createClass({
     donation.foodtruck_id = this.props.foodtruckId;
     ApiUtil.createDonation(donation);
     this.setState({toggleDonation: true}, this.resetlife);
-
   },
 
   redirectToSignUp: function () {
@@ -51,7 +50,6 @@ window.DonationForm = React.createClass({
   },
 
   render: function () {
-
 
     if (window.CURRENT_USER_ID) {
 
@@ -64,7 +62,6 @@ window.DonationForm = React.createClass({
     return(
       <div className="donation-form-title">Your Contribution
       <form onSubmit={this.createDonation}>
-
         <div>
           <label htmlFor='donation_amount'></label>
           <input
@@ -75,15 +72,10 @@ window.DonationForm = React.createClass({
             placeholder='$50 $100 $200'
             valueLink={this.linkState("amount")}
           />
-
         <div>
           <button className="donation-form-button">CONTRIBUTE NOW</button>
         </div>
-
-
-
         </div>
-
       </form>
 
           {renderDonationConfirmation}
@@ -94,7 +86,6 @@ window.DonationForm = React.createClass({
 
     return(
       <form className="new-donation" onSubmit={this.redirectToSignUp}>
-
         <div>
           <label htmlFor='donation_amount'>Amount:</label>
           <input
@@ -104,13 +95,10 @@ window.DonationForm = React.createClass({
             valueLink={this.linkState("amount")}
           />
         </div>
-
         <button className="donation-form-button">Sign Up to Contribute!</button>
         <br />
-
       </form>
     );
-
 
   }
   }

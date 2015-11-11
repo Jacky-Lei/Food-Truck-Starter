@@ -48,8 +48,6 @@ window.Navbar = React.createClass({
               </a>
             </div>
 
-
-
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav dropdown">
 
@@ -59,7 +57,6 @@ window.Navbar = React.createClass({
               </ul>
 
               <ul className="nav navbar-nav navbar-right">
-
 
                   <li className="navbar-profile-name">Logged In As: {window.CURRENT_USER_USERNAME}</li>
                   <Button onClick={this.signout} className="navbar-log-out-button">

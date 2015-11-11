@@ -67,11 +67,20 @@ window.FoodtruckDetail = React.createClass({
           }
 
           function commaSeparateNumber(val){
-            while (/(\d+)(\d{3})/.test(val.toString())){
-              val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+            var digits = String(val).split("");
+            var result = [];
+            var commaIdx = ((digits.length % 3) - 1);
+            for ( var i = 0; i < digits.length; i++) {
+              if ((i === commaIdx) && (i !== digits.length-1)) {
+              result.push(digits[i] + ",");
+                commaIdx += 3;
+            } else {
+              result.push(digits[i]);
             }
-            return val;
-          }
+
+            }
+            return result.join("");
+            }
 
           if(this.state.foodtruck.perks.length !==0){
             var selectAPerk = "Select a Perk";
@@ -114,9 +123,6 @@ window.FoodtruckDetail = React.createClass({
 
               <div className="foodtruck-detail-donation-percentage">{result}% funded</div>
 
-
-
-
               <div className="foodtruck-detail-days">{diffDays}
                 <span className="foodtruck-detail-days-left"> days to go</span>
               </div>
@@ -128,7 +134,7 @@ window.FoodtruckDetail = React.createClass({
                   <DonationForm foodtruckId={this.props.params.foodtruckId}/> :
 
                     <div>
-                    <Alert bsStyle="danger" className="perk-add-alert"> You're almost done! Simply click
+                    <Alert bsStyle="danger" className="perk-add-alert"> You are almost done! Simply click
                         <strong> "Add Perks"</strong> to make some custom rewards for your supporters or
                         <strong> "Finish Food Truck"</strong> to see your final food truck page!
                     </Alert>
@@ -150,9 +156,6 @@ window.FoodtruckDetail = React.createClass({
                 )}
               </ol>
           </div>
-
-
-
 
           </div>
         </div>

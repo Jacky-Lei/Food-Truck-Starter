@@ -64,8 +64,6 @@ window.PerkForm = React.createClass({
             <button className="btn btn-primary">Register Perk!</button>
           </div>
 
-
-
           <br/>
         </form>
         <AlertAutoDismissable alertKey={this.props.perkKey} perk={this.state}/>

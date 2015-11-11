@@ -1,7 +1,5 @@
 window.DonationConfirmation = React.createClass({
 
-
-
   render: function () {
 
     if(this.props.donationAmount !== ""){

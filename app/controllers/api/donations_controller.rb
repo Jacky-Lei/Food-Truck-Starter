@@ -1,6 +1,6 @@
 class Api::DonationsController < ApplicationController
+  
   def create
-
     @donation = current_user.donations.new(donation_params)
     if @donation.save
       render :show
