@@ -13,20 +13,15 @@ Food Truck Starter is a web application inspired by KickStarter for food truck e
 
 Built on Ruby on Rails, Javascript, and React, this app allows users to:
 
-* Sign Up / Log In / Log Out / Log In As Guest
-* Filter Food Trucks By Category For Viewing
-* Endorse Food Trucks By Selecting Dollar Amount Or Specific Perk (Reward)
-* Create Food Trucks With Images, Funding Goal, And Perks
-
-#### Signing Up / Logging In
+#### Sign Up / Log In / Log Out / Log In As Guest
 * User model uses BCrypt and SecureRandom to generate password digest and session tokens
 * Guest log in handler uses AJAX to submit post request with default username and password
 
-#### Filtering Food Trucks
+#### Filter Food Trucks By Category For Viewing
 * jBuilder optimized to eager load all food trucks and then filter by category_id as a foreign key for quick response
 * React Flux architecture makes for easy-to-follow data flow and debugging between category, food truck, and other components
 
-#### Endorsing Food Trucks
+#### Endorse Food Trucks
 
 ![showScreenshot]
 (http://res.cloudinary.com/akantoword/image/upload/v1447184132/FTshow_vdjybq.png)
@@ -34,7 +29,7 @@ Built on Ruby on Rails, Javascript, and React, this app allows users to:
 * Finalizing a contribution (donation) will update its associated objects in the database as well as its corresponding component in the current page
 * Custom confirmation and Bootstrap progress bar components respond to user interaction through React Flux loop
 
-#### Creating Food Trucks
+#### Create Food Trucks With Images, Funding Goal, And Perks
 
 ![createScreenshot]
 (http://res.cloudinary.com/akantoword/image/upload/v1447183767/FTcreate_xduw87.png)
